@@ -1,0 +1,55 @@
+acessar_deepseek_devtools.txt
+
+Assim se importa um javascript no console:
+var script = document.createElement('script');
+script.src = 'https://cdn.jsdelivr.net/npm/axios@1.15.2/dist/axios.min.js';
+document.head.appendChild(script);
+
+Para usar a api que o chat web do deepseek usa por debaixo dos panos, precisamos de 3 coisas:
+
+1 - O Challenge(desafio)
+2 - Criar um chat(opcional)
+3 - Receber um completion
+
+
+1 - O Challenge
+
+O Challenge é um desafio que o cliente requisita do servidor. A solução desse desafio empacotada com alguns outros dados em Base64 é enviada ao servidor na etapa 3(Receber um completion), como uma prova de trabalho. Este é um mecanismo anti-bot para evitar que alguem só enviasse uma requisição de completion e recebesse uma resposta facil, pois se só o js do deepseek web sabe resolver o problema, então fica dificil alguem usar a api. Porém, nós conseguimos o algoritmo que produz a resposta ao desafio.
+Para receber o challenge do servidor, usamos o seguinte código(js):
+
+axios.post('https://chat.deepseek.com/api/v0/chat/create_pow_challenge', {target_path: "/api/v0/chat/completion"},
+    {headers: {'Authorization': 'Bearer ' + JSON.parse(localStorage.userToken).value}
+}).then(function(resp){console.log(resp)})
+
+
+
+2 - Criar um chat
+
+Para obter respostas da IA deepseek, devemos obviamente criar um chat, assim:
+
+axios.post('https://chat.deepseek.com/api/v0/chat_session/create', {}, {headers: {
+    'Authorization': 'Bearer ' + JSON.parse(localStorage.userToken).value,}
+  }).then(function(resp){console.log(resp)})
+
+Mostra-se no console do devtools o objeto de resposta. Nele, está contido o UUID do novo chat. Precisamos dessa UUID.
+
+
+3 - Receber um completion
+
+Agora que temos um chat novo criado, podemos pedir uma resposta a uma pergunta:
+
+axios.post('https://chat.deepseek.com/api/v0/chat/completion', {
+        chat_session_id: // Aqui vai o UUID do chat desejado,
+        model_type: "default",
+        parent_message_id: null,
+        preempt: false,
+        prompt: // Aqui vai o nosso prompt,
+        ref_file_ids: [],
+        search_enable: false,
+        thinking_enabled: true,
+    },
+    {headers: {'Authorization': 'Bearer ' + JSON.parse(localStorage.userToken).value,
+        "x-hif-leim": JSON.parse(localStorage.getItem("hif_leim_cached")),
+        "x-ds-pow-response": // A resposta ao challenge que obtivemos
+    }
+    }).then(function(resp){console.log(resp)})

@@ -1,0 +1,48 @@
+
+https://claude.ai/login
+treyten.zerrick@forliion.com
+tr31t3nz3r1c
+nome: Treiten Zerrick
+
+deepseek
+testedasias@proton.me
+deep_tr31t3nz3r1c
+
+
+testedasias@proton.me
+chapter quote fall oxygen kangaroo brick assist gather jacket idle beyond rent
+01_t3stedas145
+
+chatgpt:
+testedasias@proton.me
+TE5T3_d@s_145
+Treiten Zerrick
+
+hugging face
+testedasias@proton.me
+tr31tenz3r15scK
+
+
+Um panorama geral pode ser feito sobre o que precisaremos para o sistema:
+
+Precisa-se extrair os dados de uma tabela de uma imagem(OCR puro ou uma IA?)
+Precisa-se ter uma IA que faça com aprofundamento os temas requeridos(Ou seja, precisamos também criar um prompt que entregue um bom resultado, precisamos de prompt engineering)
+Precisa-se de uma interface web responsiva. Web é melhor pois de web pode-se usar em qualquer lugar.
+
+Penso que a melhor forma de usar IAs é com web scraping, pois os provedores de api de ia geralmente permitem o uso de modelos fracos ou então com limites muito limitantes. Com web scraping, o bot pode fingir que é o site da ia e fazer mesmo requisições usando o nome do site para tal, o que dificulta e muito a detecção.
+
+
+
+Pensei em usar o DeepSeek(chat.deepseek.com)
+MAS: o deepseek não gera PDFs
+mesmo sem gerar pdfs, o deep seek tem uma velocidade rapida em decodificar a tabela. o Z.AI demora consideravelmente. Podemos em outro sistema usar o deepseek como um orquestrador de IAs.
+
+Descobri que o deepseek cria um novo chat ao entrar na página de novo chat(cada chat tem um UUID).
+Usa um sistema anti-bot de proof of work. O cliente pede um challenge ao servidor e o servidor manda. A partir daí, o cliente calcula uma hash que envia pro servidor no momento de enviar uma pergunta do usuário.
+Atualmente, consegui obter o algoritmo pra criar uma x-ds-pow-response(o header de proof of work) válido. Só faltava obter um hif-leim, mas ele vem de uma url simples.(veja mais em acessar_deepseek_devtools.txt)
+Usei: https://chat.z.ai/c/bab4113e-c261-44e7-a8a2-e5c9cee3e711
+
+
+
+Agora vamos tentar usar o Z.AI, entender como funciona!
+

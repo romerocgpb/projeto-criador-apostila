@@ -1,0 +1,187 @@
+var script = document.createElement('script');
+script.src = 'https://cdn.jsdelivr.net/npm/axios@1.15.2/dist/axios.min.js';
+document.head.appendChild(script);
+
+let user_id = "9d622803-4050-41e8-ad2c-aa957456cae8";
+let bearer = "eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjlkNjIyODAzLTQwNTAtNDFlOC1hZDJjLWFhOTU3NDU2Y2FlOCIsImVtYWlsIjoidHJleXRlbi56ZXJyaWNrQGZvcmxpaW9uLmNvbSJ9.zx-KAPntgz74n0zvxA7tCX5cP98P0vSh-Nes3mjlIg9Q9_3qUzXtsqlvwQBNb5ESvKG-t6UHlXfNNzYtYgIf_A"
+let new_chat_id = null;
+let prompt = "Você está sendo acessado do console do devtools do browser. Seu ID único é #1. Guarde-o, reponda tudo sempre em formato JSON."
+let last_id = null
+
+function createChat(prompt, bearer, titulo_chat) {
+    const msgId = crypto.randomUUID();
+    const now = Date.now();
+    
+    return axios.post('https://chat.z.ai/api/v1/chats/new', {
+    "chat": {
+        "id": "",
+        "title": "New Chat",
+        "models": [
+            "GLM-5.1"
+        ],
+        "params": {},
+        "history": {
+            "messages": {
+                [msgId]: {
+                    "id": msgId,
+                    "parentId": null,
+                    "childrenIds": [],
+                    "role": "user",
+                    "content": "Olá!",
+                    "timestamp": Math.floor(now / 1000),
+                    "models": [
+                        "GLM-5.1"
+                    ]
+                }
+            },
+            "currentId": msgId
+        },
+        "tags": [],
+        "flags": [],
+        "features": [
+            {
+                "type": "mcp",
+                "server": "vibe-coding",
+                "status": "hidden"
+            },
+            {
+                "type": "mcp",
+                "server": "ppt-maker",
+                "status": "hidden"
+            },
+            {
+                "type": "mcp",
+                "server": "image-search",
+                "status": "hidden"
+            },
+            {
+                "type": "mcp",
+                "server": "deep-research",
+                "status": "hidden"
+            }
+        ],
+        "mcp_servers": [],
+        "enable_thinking": true,
+        "auto_web_search": false,
+        "message_version": 1,
+        "extra": {},
+        "timestamp": now,
+        "type": "default"
+    }
+}, {headers: {
+        'Authorization': 'Bearer ' + bearer,
+        'Content-Type': 'application/json',
+        'x-region': 'overseas'
+    }})
+}
+
+function hmacSha256Pure(key, msg) {
+    function sha256(str) {
+        const K = [0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x59f111f1,0x923f82a4,0xab1c5ed5,0xd807aa98,0x12835b01,0x243185be,0x550c7dc3,0x72be5d74,0x80deb1fe,0x9bdc06a7,0xc19bf174,0xe49b69c1,0xefbe4786,0x0fc19dc6,0x240ca1cc,0x2de92c6f,0x4a7484aa,0x5cb0a9dc,0x76f988da,0x983e5152,0xa831c66d,0xb00327c8,0xbf597fc7,0xc6e00bf3,0xd5a79147,0x06ca6351,0x14292967,0x27b70a85,0x2e1b2138,0x4d2c6dfc,0x53380d13,0x650a7354,0x766a0abb,0x81c2c92e,0x92722c85,0xa2bfe8a1,0xa81a664b,0xc24b8b70,0xc76c51a3,0xd192e819,0xd6990624,0xf40e3585,0x106aa070,0x19a4c116,0x1e376c08,0x2748774c,0x34b0bcb5,0x391c0cb3,0x4ed8aa4a,0x5b9cca4f,0x682e6ff3,0x748f82ee,0x78a5636f,0x84c87814,0x8cc70208,0x90befffa,0xa4506ceb,0xbef9a3f7,0xc67178f2];
+        const H = [0x6a09e667,0xbb67ae85,0x3c6ef372,0xa54ff53a,0x510e527f,0x9b05688c,0x1f83d9ab,0x5be0cd19];
+        let msg = unescape(encodeURIComponent(str));
+        const words = [];
+        for (let i = 0; i < msg.length * 8; words[i >> 5] |= (msg.charCodeAt(i / 8) & 0xff) << (24 - i % 32), i += 8);
+        words[msg.length * 8 >> 5] |= 0x80 << (24 - msg.length * 8 % 32);
+        words[(msg.length * 8 + 64 >> 9 << 4) + 15] = msg.length * 8;
+        for (let i = 0; i < words.length; i += 16) {
+            const w = [...words.slice(i, i + 16)];
+            for (let j = 16; j < 64; j++) { const s0 = [0,1][+(j>=16)] ? (w[j-15]>>>7^w[j-15]>>>18^w[j-15]>>>3) : 0; const s1 = [0,1][+(j>=16)] ? (w[j-2]>>>17^w[j-2]>>>19^w[j-2]>>>10) : 0; w[j] = (w[j-16]+s0+w[j-7]+s1)|0; }
+            let [a,b,c,d,e,f,g,h] = H;
+            for (let j = 0; j < 64; j++) {
+                const S1 = (e>>>6^e>>>11^e>>>25); const ch = (e&f)^(~e&g); const t1 = (h+S1+ch+K[j]+w[j])|0;
+                const S0 = (a>>>2^a>>>13^a>>>22); const maj = (a&b)^(a&c)^(b&c); const t2 = (S0+maj)|0;
+                h=g; g=f; f=e; e=(d+t1)|0; d=c; c=b; b=a; a=(t1+t2)|0;
+            }
+            H[0]=(H[0]+a)|0; H[1]=(H[1]+b)|0; H[2]=(H[2]+c)|0; H[3]=(H[3]+d)|0;
+            H[4]=(H[4]+e)|0; H[5]=(H[5]+f)|0; H[6]=(H[6]+g)|0; H[7]=(H[7]+h)|0;
+        }
+        return H.map(v => ('00000000'+v.toString(16)).slice(-8)).join('');
+    }
+
+    const BLOCK = 64;
+    let k = unescape(encodeURIComponent(key));
+    if (k.length > BLOCK) k = sha256(k);
+    while (k.length < BLOCK) k += '\0';
+    let oKey = '', iPad = '';
+    for (let i = 0; i < BLOCK; i++) { oKey += String.fromCharCode(k.charCodeAt(i) ^ 0x5c); iPad += String.fromCharCode(k.charCodeAt(i) ^ 0x36); }
+    return sha256(oKey + sha256(iPad + msg));
+}
+
+
+function send_zai_message(user_id, prompt, bearer, chat_id, parent_message_id){
+    let timestamp  = String(Date.now())           // ex: "1777321391088"
+    let requestId  = crypto.randomUUID()          // ex: "22c175ec-dbc5-44c3-b200-a705de43a90d"
+
+    let sortedPayload = "requestId," + requestId + ",timestamp," + timestamp + ",user_id," + user_id;
+
+    let encoder = new TextEncoder();
+    let bytes = encoder.encode(prompt);
+    let CHUNK = 32768;
+    let byteStr = "";
+    for (let i = 0; i < bytes.length; i += CHUNK) {
+        byteStr += String.fromCharCode(...Array.from(bytes.slice(i, i + CHUNK)));
+    }
+    let promptB64 = btoa(byteStr);
+
+    let message = sortedPayload + "|" + promptB64 + "|" + timestamp;
+
+    let timeWindow = String(Math.floor(Number(timestamp) / 300000));
+
+    let derivedKey = hmacSha256Pure("key-@@@@)))()((9))-xxxx&&&%%%%%", timeWindow);
+
+    let signature = hmacSha256Pure(derivedKey, message);
+
+    let last_id = crypto.randomUUID()
+
+    return [axios.post(`https://chat.z.ai/api/v2/chat/completions?timestamp=${timestamp}&requestId=${requestId}&version=1.0.0&platform=web&token=${bearer}&user_id=${user_id}`, {
+                "stream": true,
+                "model": "GLM-5.1",
+                "messages": [
+                    {
+                        "role": "user",
+                        "content": prompt
+                    }
+                ],
+                "signature_prompt": prompt,
+                "params": {},
+                "extra": {},
+                "features": {
+                    "image_generation": false,
+                    "web_search": false,
+                    "auto_web_search": false,
+                    "preview_mode": true,
+                    "flags": [],
+                    "vlm_tools_enable": false,
+                    "vlm_web_search_enable": false,
+                    "vlm_website_mode": false,
+                    "enable_thinking": false
+                },
+                "variables": {
+                    "{{USER_NAME}}": "zai",
+                    "{{USER_LOCATION}}": "Unknown",
+                    "{{CURRENT_DATETIME}}": "2026-05-02 18:39:07",
+                    "{{CURRENT_DATE}}": "2026-05-02",
+                    "{{CURRENT_TIME}}": "18:39:07",
+                    "{{CURRENT_WEEKDAY}}": "Saturday",
+                    "{{CURRENT_TIMEZONE}}": "Etc/GMT+3",
+                    "{{USER_LANGUAGE}}": "en-US"
+                },
+                "chat_id": chat_id,
+                "id": last_id,
+                "current_user_message_id": crypto.randomUUID(),
+                "current_user_message_parent_id": parent_message_id,
+                "background_tasks": {
+                    "title_generation": true,
+                    "tags_generation": true
+                }
+}, { headers:{"Authorization": `Bearer ${bearer}`, "X-Signature": signature, "signature_timestamp": timestamp, "Content-Type": "application/json", "X-FE-Version": "prod-fe-1.1.21"} } ), last_id]
+
+}
+
+createChat(prompt, bearer, "Não mude esse nome.").then(function(resp){
+    new_chat_id = resp.data.id;
+    let zaimsg = send_zai_message(user_id, prompt, bearer, new_chat_id, last_id)
+    zaimsg[0].then(function(resp){console.log(resp)})
+    last_id = zaimsg[1]
+});

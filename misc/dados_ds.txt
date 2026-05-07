@@ -1,0 +1,316 @@
+URL1
+
+
+Headers:
+------------------------------------------------------------------
+cURL: curl ^"https://chat.deepseek.com/api/v0/chat/completion^" ^
+  -H ^"accept: */*^" ^
+  -H ^"accept-language: pt-BR,pt;q=0.7^" ^
+  -H ^"authorization: Bearer ND5WCH7zgxuuC+jJSSp1IqexsCI7syRzeIAum+dJ8PWWkDxf3Q5J+hoEU1b7A3jE^" ^
+  -H ^"content-type: application/json^" ^
+  -b ^"ds_session_id=ee3e40e05b6c4d9b95c9660faaa7fe49; aws-waf-token=d95c0c2a-9d47-4a06-a330-f0174bb3aed8:EAoAjx+F1EYzAAAA:PurAvWxxVYSNRyBSF4gO5FBNJPj284/EN2XeZjNNjNeoGQ+G0l9fUjFYq5PmJoz7Lp9B9kCohKMDF8WxicPMaG5dmKUpkKuatdEadlooEteIO5NN5FcLGX+2AykxTXvQQKzKizVrLLeLxg5QvIDdZlisU47/jQTvMYLR8tj2b7vsaoU6C9Q3pP8yM0B3yIo=; .thumbcache_6b2e5483f9d858d7c661c5e276b6a6ae=^" ^
+  -H ^"origin: https://chat.deepseek.com^" ^
+  -H ^"priority: u=1, i^" ^
+  -H ^"referer: https://chat.deepseek.com/a/chat/s/b9b98317-6bd0-4427-a8c9-d511c2e9c0ad^" ^
+  -H ^"sec-ch-ua: ^\^"Brave^\^";v=^\^"143^\^", ^\^"Chromium^\^";v=^\^"143^\^", ^\^"Not A(Brand^\^";v=^\^"24^\^"^" ^
+  -H ^"sec-ch-ua-arch: ^\^"x86^\^"^" ^
+  -H ^"sec-ch-ua-bitness: ^\^"64^\^"^" ^
+  -H ^"sec-ch-ua-full-version-list: ^\^"Brave^\^";v=^\^"143.0.0.0^\^", ^\^"Chromium^\^";v=^\^"143.0.0.0^\^", ^\^"Not A(Brand^\^";v=^\^"24.0.0.0^\^"^" ^
+  -H ^"sec-ch-ua-mobile: ?0^" ^
+  -H ^"sec-ch-ua-model: ^\^"^\^"^" ^
+  -H ^"sec-ch-ua-platform: ^\^"Windows^\^"^" ^
+  -H ^"sec-ch-ua-platform-version: ^\^"7.0.0^\^"^" ^
+  -H ^"sec-fetch-dest: empty^" ^
+  -H ^"sec-fetch-mode: cors^" ^
+  -H ^"sec-fetch-site: same-origin^" ^
+  -H ^"sec-gpc: 1^" ^
+  -H ^"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36^" ^
+  -H ^"x-app-version: 20241129.1^" ^
+  -H ^"x-client-locale: en_US^" ^
+  -H ^"x-client-platform: web^" ^
+  -H ^"x-client-timezone-offset: -10800^" ^
+  -H ^"x-client-version: 1.8.0^" ^
+  -H ^"x-ds-pow-response: eyJhbGdvcml0aG0iOiJEZWVwU2Vla0hhc2hWMSIsImNoYWxsZW5nZSI6ImQ2M2Y0ZTQ5ZDFlNzg4NmM5MTY1NGYwNDY1YzgwMmI4ZTJmMmI3ZTQ5NWY5MjYwMTA0YWQxNjFjZDNjMTBlZTYiLCJzYWx0IjoiNTQzZmM0YzQ4MTJmZjY5N2JhZGUiLCJhbnN3ZXIiOjEzNTc4Niwic2lnbmF0dXJlIjoiYzdmNTVlYjMwMzkwYjFhZDI1NDY2MjczZWFhZTg2YjMzNThjODA4ZDFhNDFjMDg0YTBlOWIzNTE5ZDMyYmE2MiIsInRhcmdldF9wYXRoIjoiL2FwaS92MC9jaGF0L2NvbXBsZXRpb24ifQ==^" ^
+  -H ^"x-hif-leim: jD7FIfXmBnRNxWel5OBQCUvRVTETTKvfC2cQlSQvs0rhdwJsWX3TfBU=.pDkinx010KGDXVLO^" ^
+  --data-raw ^"^{^\^"chat_session_id^\^":^\^"b9b98317-6bd0-4427-a8c9-d511c2e9c0ad^\^",^\^"parent_message_id^\^":null,^\^"model_type^\^":^\^"default^\^",^\^"prompt^\^":^\^"Bom dia^! Voc^  ^  o famoso DeepSeek?^\^",^\^"ref_file_ids^\^":^[^],^\^"thinking_enabled^\^":false,^\^"search_enabled^\^":false,^\^"preempt^\^":false^}^"
+
+------------------------------------------------------------------
+
+Response(opção no DevTools "copy response")
+
+------------------------------------------------------------------
+event: ready
+data: {"request_message_id":1,"response_message_id":2,"model_type":"default"}
+
+event: update_session
+data: {"updated_at":1777039860.281056}
+
+data: {"v":{"response":{"message_id":2,"parent_id":1,"model":"","role":"ASSISTANT","thinking_enabled":false,"ban_edit":false,"ban_regenerate":false,"status":"WIP","incomplete_message":null,"accumulated_token_usage":0,"files":[],"feedback":null,"inserted_at":1777039860.276007,"search_enabled":false,"fragments":[{"id":2,"type":"RESPONSE","content":"B","references":[],"stage_id":1}],"conversation_mode":"DEFAULT","has_pending_fragment":false,"auto_continue":false}}}
+
+data: {"p":"response/fragments/-1/content","o":"APPEND","v":"om"}
+
+data: {"v":" dia"}
+
+data: {"v":"!"}
+
+data: {"v":" 😊"}
+
+data: {"v":"\n\n"}
+
+data: {"v":"Sim"}
+
+data: {"v":","}
+
+data: {"v":" sou"}
+
+data: {"v":" o"}
+
+data: {"v":" Deep"}
+
+data: {"v":"Se"}
+
+data: {"v":"ek"}
+
+data: {"v":","}
+
+data: {"v":" um"}
+
+data: {"v":" assist"}
+
+data: {"v":"ente"}
+
+data: {"v":" de"}
+
+data: {"v":" IA"}
+
+data: {"v":" cri"}
+
+data: {"v":"ado"}
+
+data: {"v":" pela"}
+
+data: {"v":" Deep"}
+
+data: {"v":"Se"}
+
+data: {"v":"ek"}
+
+data: {"v":" ("}
+
+data: {"v":"深度"}
+
+data: {"v":"求"}
+
+data: {"v":"索"}
+
+data: {"v":")."}
+
+data: {"v":" Est"}
+
+data: {"v":"ou"}
+
+data: {"v":" aqui"}
+
+data: {"v":" para"}
+
+data: {"v":" ajudar"}
+
+data: {"v":" com"}
+
+data: {"v":" suas"}
+
+data: {"v":" dú"}
+
+data: {"v":"v"}
+
+data: {"v":"idas"}
+
+data: {"v":","}
+
+data: {"v":" perg"}
+
+data: {"v":"untas"}
+
+data: {"v":" ou"}
+
+data: {"v":" o"}
+
+data: {"v":" que"}
+
+data: {"v":" você"}
+
+data: {"v":" precis"}
+
+data: {"v":"ar"}
+
+data: {"v":"!"}
+
+data: {"v":" Pos"}
+
+data: {"v":"so"}
+
+data: {"v":" process"}
+
+data: {"v":"ar"}
+
+data: {"v":" textos"}
+
+data: {"v":","}
+
+data: {"v":" arqu"}
+
+data: {"v":"ivos"}
+
+data: {"v":" ("}
+
+data: {"v":"im"}
+
+data: {"v":"agens"}
+
+data: {"v":","}
+
+data: {"v":" PDF"}
+
+data: {"v":"s"}
+
+data: {"v":","}
+
+data: {"v":" Word"}
+
+data: {"v":","}
+
+data: {"v":" Excel"}
+
+data: {"v":","}
+
+data: {"v":" PowerPoint"}
+
+data: {"v":","}
+
+data: {"v":" TX"}
+
+data: {"v":"T"}
+
+data: {"v":")"}
+
+data: {"v":" e"}
+
+data: {"v":" até"}
+
+data: {"v":" buscar"}
+
+data: {"v":" informações"}
+
+data: {"v":" online"}
+
+data: {"v":" se"}
+
+data: {"v":" você"}
+
+data: {"v":" at"}
+
+data: {"v":"ivar"}
+
+data: {"v":" a"}
+
+data: {"v":" busca"}
+
+data: {"v":" na"}
+
+data: {"v":" Web"}
+
+data: {"v":".\n\n"}
+
+data: {"v":"Como"}
+
+data: {"v":" pos"}
+
+data: {"v":"so"}
+
+data: {"v":" ajud"}
+
+data: {"v":"á"}
+
+data: {"v":"-lo"}
+
+data: {"v":" hoje"}
+
+data: {"v":"?"}
+
+data: {"v":" F"}
+
+data: {"v":"ique"}
+
+data: {"v":" à"}
+
+data: {"v":" vont"}
+
+data: {"v":"ade"}
+
+data: {"v":" para"}
+
+data: {"v":" perg"}
+
+data: {"v":"unt"}
+
+data: {"v":"ar"}
+
+data: {"v":"!"}
+
+data: {"v":" 🚀"}
+
+data: {"p":"response","o":"BATCH","v":[{"p":"accumulated_token_usage","v":151},{"p":"quasi_status","v":"FINISHED"}]}
+
+data: {"p":"response/status","o":"SET","v":"FINISHED"}
+
+event: update_session
+data: {"updated_at":1777039862.6813538}
+
+event: title
+data: {"content":"DeepSeek Greeting and Introduction"}
+
+event: close
+data: {"click_behavior":"none","auto_resume":false}
+
+------------------------------------------------------------------
+
+URL2
+Headers:
+------------------------------------------------------------------
+cURL: curl ^"https://chat.deepseek.com/api/v0/chat_session/create^" ^
+  -H ^"accept: */*^" ^
+  -H ^"accept-language: pt-BR,pt;q=0.7^" ^
+  -H ^"authorization: Bearer ND5WCH7zgxuuC+jJSSp1IqexsCI7syRzeIAum+dJ8PWWkDxf3Q5J+hoEU1b7A3jE^" ^
+  -H ^"content-type: application/json^" ^
+  -b ^"ds_session_id=ee3e40e05b6c4d9b95c9660faaa7fe49; aws-waf-token=d95c0c2a-9d47-4a06-a330-f0174bb3aed8:EAoAjx+F1EYzAAAA:PurAvWxxVYSNRyBSF4gO5FBNJPj284/EN2XeZjNNjNeoGQ+G0l9fUjFYq5PmJoz7Lp9B9kCohKMDF8WxicPMaG5dmKUpkKuatdEadlooEteIO5NN5FcLGX+2AykxTXvQQKzKizVrLLeLxg5QvIDdZlisU47/jQTvMYLR8tj2b7vsaoU6C9Q3pP8yM0B3yIo=; .thumbcache_6b2e5483f9d858d7c661c5e276b6a6ae=^" ^
+  -H ^"origin: https://chat.deepseek.com^" ^
+  -H ^"priority: u=1, i^" ^
+  -H ^"referer: https://chat.deepseek.com/a/chat/s/b9b98317-6bd0-4427-a8c9-d511c2e9c0ad^" ^
+  -H ^"sec-ch-ua: ^\^"Brave^\^";v=^\^"143^\^", ^\^"Chromium^\^";v=^\^"143^\^", ^\^"Not A(Brand^\^";v=^\^"24^\^"^" ^
+  -H ^"sec-ch-ua-arch: ^\^"x86^\^"^" ^
+  -H ^"sec-ch-ua-bitness: ^\^"64^\^"^" ^
+  -H ^"sec-ch-ua-full-version-list: ^\^"Brave^\^";v=^\^"143.0.0.0^\^", ^\^"Chromium^\^";v=^\^"143.0.0.0^\^", ^\^"Not A(Brand^\^";v=^\^"24.0.0.0^\^"^" ^
+  -H ^"sec-ch-ua-mobile: ?0^" ^
+  -H ^"sec-ch-ua-model: ^\^"^\^"^" ^
+  -H ^"sec-ch-ua-platform: ^\^"Windows^\^"^" ^
+  -H ^"sec-ch-ua-platform-version: ^\^"7.0.0^\^"^" ^
+  -H ^"sec-fetch-dest: empty^" ^
+  -H ^"sec-fetch-mode: cors^" ^
+  -H ^"sec-fetch-site: same-origin^" ^
+  -H ^"sec-gpc: 1^" ^
+  -H ^"user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36^" ^
+  -H ^"x-app-version: 20241129.1^" ^
+  -H ^"x-client-locale: en_US^" ^
+  -H ^"x-client-platform: web^" ^
+  -H ^"x-client-timezone-offset: -10800^" ^
+  -H ^"x-client-version: 1.8.0^" ^
+  --data-raw ^"^{^}^"
+ ------------------------------------------------------------------
+
+Response:
+ ------------------------------------------------------------------
+{"code":0,"msg":"","data":{"biz_code":0,"biz_msg":"","biz_data":{"chat_session":{"id":"dad7cd97-5c7a-4380-96ad-8dca23dbb33d","seq_id":199203059,"agent":"chat","model_type":"default","title":null,"title_type":"WIP","version":0,"current_message_id":null,"pinned":false,"inserted_at":1777039859.733,"updated_at":1777039859.733},"ttl_seconds":259200}}}
+
+ ------------------------------------------------------------------
+
+ 

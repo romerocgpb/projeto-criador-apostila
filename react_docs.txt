@@ -1,0 +1,3 @@
+npm create vite@latest nome_projeto
+cd nome_projeto
+npm install -D tailwindcss@3
