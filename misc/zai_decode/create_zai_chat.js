@@ -1,3 +1,4 @@
+
 var script = document.createElement('script');
 script.src = 'https://cdn.jsdelivr.net/npm/axios@1.15.2/dist/axios.min.js';
 document.head.appendChild(script);
@@ -8,7 +9,10 @@ let new_chat_id = null;
 let prompt = "Você está sendo acessado do console do devtools do browser. Seu ID único é #1. Guarde-o, reponda tudo sempre em formato JSON."
 let last_id = null
 
-function createChat(prompt, bearer, titulo_chat) {
+
+
+
+function createChat(prompt, bearer, titulo_chat, chat_model) {
     const msgId = crypto.randomUUID();
     const now = Date.now();
     
@@ -17,7 +21,7 @@ function createChat(prompt, bearer, titulo_chat) {
         "id": "",
         "title": "New Chat",
         "models": [
-            "GLM-5.1"
+            chat_model
         ],
         "params": {},
         "history": {
@@ -30,7 +34,7 @@ function createChat(prompt, bearer, titulo_chat) {
                     "content": "Olá!",
                     "timestamp": Math.floor(now / 1000),
                     "models": [
-                        "GLM-5.1"
+                        chat_model
                     ]
                 }
             },

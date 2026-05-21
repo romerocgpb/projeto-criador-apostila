@@ -18,6 +18,7 @@ function gerarToken(usuario) {
 
     // O método 'sign' cria o token
     const token = jwt.sign(payload, SECRET_KEY, options);
+    console.log(token)
     return token;
 }
 
@@ -26,23 +27,25 @@ function verificarToken(tokenRecebido) {
         // O método 'verify' checa a assinatura E a data de expiração
         const decoded = jwt.verify(tokenRecebido, SECRET_KEY);
 
-        console.log('Token válido!');
-        console.log('Dados do usuário:', decoded);
-        return decoded;
+        // console.log('Token válido!');
+        // console.log('Dados do usuário:', decoded);
+        // return decoded;
+        return {resultado: true, decoded: decoded};
 
     } catch (erro) {
         // Aqui tratamos os erros específicos
         
         if (erro.name === 'TokenExpiredError') {
-            console.error('Erro: O token expirou em:', erro.expiredAt);
+            // console.error('Erro: O token expirou em:', erro.expiredAt);
             // Aqui você pode avisar o frontend para pedir login novamente
+            return {resultado: false, causa: 'token_expirado'}
         } else if (erro.name === 'JsonWebTokenError') {
-            console.error('Erro: Token inválido ou adulterado.');
+            // console.error('Erro: Token inválido ou adulterado.');
+            return {resultado: false, causa: 'token_invalido'}
         } else {
-            console.error('Erro desconhecido:', erro);
+            // console.error('Erro desconhecido:', erro);
+            return {resultado: false, causa: 'erro_especial', erro: erro}
         }
-        
-        return null;
     }
 }
 

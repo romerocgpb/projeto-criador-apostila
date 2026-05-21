@@ -1,24 +1,30 @@
 {
   "dependencies": {
+    "@open-sourcerers/j-stillery": "^0.2.3",
     "@tailwindcss/vite": "^4.2.4",
+    "axios": "^1.16.1",
     "body-parser": "^2.2.2",
     "cookie-parser": "^1.4.7",
     "express": "^5.2.1",
     "express-session": "^1.19.0",
     "joi": "^18.2.1",
+    "js-deobfuscator": "^1.1.7",
     "jsonwebtoken": "^9.0.3",
     "md5": "^2.3.0",
-    "pg": "^8.20.0"
+    "pg": "^8.20.0",
+    "puppeteer-core": "^24.43.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.14",
     "tailwindcss": "^3.4.19"
   },
   "scripts": {
-  "start": "node server.js",
-  "dev": "nodemon server.js"
-},
-"nodemonConfig": {
-  "ignore": ["frontend/*"]
-}
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "frontend/*"
+    ]
+  }
 }

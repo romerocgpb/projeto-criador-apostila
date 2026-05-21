@@ -1,2 +1,2 @@
 senha: farinha_de_milho_com_dioxido_de_hidrocarbonetos
-email: admin@admin.admin
+email: admin@admin.com

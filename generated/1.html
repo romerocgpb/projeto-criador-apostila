@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidade 1 – A Hegemonia Europeia e a Configuração do Mundo Contemporâneo</title>
+    <style>
+        /* ========== RESET E BASE ========== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            size: A4;
+            margin: 20mm 18mm 22mm 18mm;
+        }
+
+        html {
+            font-size: 10.5pt;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+            color-adjust: exact;
+        }
+
+        body {
+            font-family: "Times New Roman", Times, "DejaVu Serif", Georgia, serif;
+            color: #1a1a1a;
+            line-height: 1.65;
+            text-align: justify;
+            hyphens: auto;
+            -webkit-hyphens: auto;
+        }
+
+        /* ========== CABEÇALHO DO DOCUMENTO ========== */
+        .doc-header {
+            text-align: center;
+            padding-bottom: 8mm;
+            margin-bottom: 6mm;
+            border-bottom: 2.5pt solid #2c3e50;
+            page-break-after: avoid;
+        }
+
+        .doc-header .habilidades {
+            font-size: 8.5pt;
+            color: #4a4a4a;
+            line-height: 1.5;
+            margin-bottom: 5mm;
+            text-align: left;
+            padding: 3mm 4mm;
+            background-color: #f0f2f5;
+            border-left: 3pt solid #2c3e50;
+        }
+
+        .doc-header .habilidades strong {
+            color: #2c3e50;
+        }
+
+        .doc-header h1 {
+            font-family: "Arial", "Helvetica Neue", Helvetica, sans-serif;
+            font-size: 16pt;
+            font-weight: 700;
+            color: #2c3e50;
+            line-height: 1.3;
+            letter-spacing: 0.3pt;
+            margin-bottom: 2mm;
+        }
+
+        /* ========== UNIDADE / SEÇÕES PRINCIPAIS ========== */
+        .unidade-divider {
+            text-align: center;
+            margin: 8mm 0 6mm 0;
+            padding: 3mm 0;
+            border-top: 1pt solid #bdc3c7;
+            border-bottom: 1pt solid #bdc3c7;
+            page-break-after: avoid;
+        }
+
+        .unidade-divider h1 {
+            font-family: "Arial", "Helvetica Neue", Helvetica, sans-serif;
+            font-size: 14pt;
+            font-weight: 700;
+            color: #2c3e50;
+            letter-spacing: 0.5pt;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-family: "Arial", "Helvetica Neue", Helvetica, sans-serif;
+            font-size: 12.5pt;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-top: 8mm;
+            margin-bottom: 4mm;
+            padding-bottom: 2mm;
+            border-bottom: 1pt solid #d5d8dc;
+            page-break-after: avoid;
+        }
+
+        h3 {
+            font-family: "Arial", "Helvetica Neue", Helvetica, sans-serif;
+            font-size: 11pt;
+            font-weight: 700;
+            color: #34495e;
+            margin-top: 5mm;
+            margin-bottom: 3mm;
+            page-break-after: avoid;
+        }
+
+        /* ========== PARÁGRAFOS ========== */
+        p {
+            margin-bottom: 3mm;
+            text-indent: 8mm;
+            orphans: 3;
+            widows: 3;
+        }
+
+        p.no-indent {
+            text-indent: 0;
+        }
+
+        /* ========== NEGRITO EM DESTAQUE (TÓPICOS DENTRO DO TEXTO) ========== */
+        p > strong:first-child,
+        .topico-destaque {
+            color: #2c3e50;
+            text-indent: 0;
+            display: inline;
+            font-weight: 700;
+        }
+
+        /* ========== LISTAS ========== */
+        ul, ol {
+            margin-left: 10mm;
+            margin-bottom: 4mm;
+        }
+
+        li {
+            margin-bottom: 2mm;
+        }
+
+        /* ========== ITÁLICOS E DESTAQUES ========== */
+        em, i {
+            font-style: italic;
+        }
+
+        /* ========== BLOCOS DE INSTITUIÇÕES DA UE ========== */
+        .instituicao-item {
+            margin-left: 8mm;
+            margin-bottom: 3mm;
+            text-indent: 0;
+        }
+
+        .instituicao-item strong {
+            color: #2c3e50;
+            font-style: italic;
+        }
+
+        /* ========== SEPARADOR TEÓRICA / PRÁTICA ========== */
+        .parte-separador {
+            margin: 10mm 0;
+            padding: 5mm 0;
+            text-align: center;
+            page-break-before: always;
+        }
+
+        .parte-separador .linha {
+            display: block;
+            height: 2pt;
+            background-color: #2c3e50;
+            margin: 3mm auto;
+            width: 60mm;
+        }
+
+        .parte-separador h1 {
+            font-family: "Arial", "Helvetica Neue", Helvetica, sans-serif;
+            font-size: 15pt;
+            font-weight: 700;
+            color: #2c3e50;
+            letter-spacing: 1pt;
+            text-transform: uppercase;
+        }
+
+        .parte-separador .subtitulo {
+            font-family: "Arial", "Helvetica Neue", Helvetica, sans-serif;
+            font-size: 9.5pt;
+            color: #7f8c8d;
+            margin-top: 2mm;
+            letter-spacing: 0.5pt;
+        }
+
+        /* ========== QUESTÕES ========== */
+        .questao {
+            margin-top: 7mm;
+            margin-bottom: 5mm;
+            page-break-inside: avoid;
+        }
+
+        .questao-numero {
+            font-family: "Arial", "Helvetica Neue", Helvetica, sans-serif;
+            font-size: 11pt;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 2mm;
+        }
+
+        .questao .enunciado {
+            margin-bottom: 3mm;
+            text-indent: 0;
+        }
+
+        .questao .enunciado.indent {
+            text-indent: 8mm;
+        }
+
+        /* ========== ALTERNATIVAS ========== */
+        .alternativas {
+            margin-left: 10mm;
+            margin-top: 2mm;
+            margin-bottom: 3mm;
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .alternativas li {
+            margin-bottom: 1.5mm;
+            padding-left: 2mm;
+            text-indent: 0;
+            line-height: 1.6;
+        }
+
+        /* ========== AFIRMATIVAS (I, II, III, IV) ========== */
+        .afirmativas {
+            margin-left: 10mm;
+            margin-top: 2mm;
+            margin-bottom: 3mm;
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .afirmativas li {
+            margin-bottom: 1.5mm;
+            padding-left: 2mm;
+            text-indent: 0;
+            line-height: 1.6;
+        }
+
+        .afirmativas li .romano {
+            font-weight: 700;
+            color: #2c3e50;
+        }
+
+        /* ========== LINHAS PARA RESPOSTA DISCURSIVA ========== */
+        .linhas-resposta {
+            margin-top: 3mm;
+            margin-left: 5mm;
+            margin-right: 5mm;
+        }
+
+        .linhas-resposta .linha {
+            display: block;
+            border-bottom: 0.5pt solid #aaa;
+            height: 7mm;
+            margin-bottom: 0;
+        }
+
+        /* ========== LACUNAS (PREENCHIMENTO) ========== */
+        .lacuna {
+            display: inline-block;
+            min-width: 40mm;
+            border-bottom: 0.8pt solid #555;
+            text-align: center;
+            color: #555;
+            font-style: italic;
+            font-size: 9pt;
+            padding: 0 1mm;
+            margin: 0 0.5mm;
+            vertical-align: baseline;
+        }
+
+        .lacuna-curta {
+            min-width: 25mm;
+        }
+
+        .lacuna-media {
+            min-width: 35mm;
+        }
+
+        .lacuna-longa {
+            min-width: 50mm;
+        }
+
+        /* ========== TEXTO DE LACUNAS ========== */
+        .texto-lacunas {
+            line-height: 2.2;
+            text-indent: 0;
+            margin-bottom: 3mm;
+        }
+
+        /* ========== CONTROLE DE QUEBRA DE PÁGINA ========== */
+        h1, h2, h3, h4 {
+            page-break-after: avoid;
+        }
+
+        .questao {
+            page-break-inside: avoid;
+        }
+
+        .parte-separador {
+            page-break-before: always;
+        }
+
+        .unidade-divider {
+            page-break-after: avoid;
+        }
+
+        /* ========== RODAPÉ ========== */
+        .rodape {
+            margin-top: 10mm;
+            padding-top: 3mm;
+            border-top: 0.5pt solid #bdc3c7;
+            text-align: center;
+            font-size: 8pt;
+            color: #999;
+            font-family: "Arial", "Helvetica Neue", Helvetica, sans-serif;
+        }
+
+        /* ========== PSEUDO-ELEMENTOS DE DESTAQUE ========== */
+        .fase-historica {
+            margin-left: 6mm;
+            margin-bottom: 3mm;
+            text-indent: 0;
+        }
+
+        .fase-historica > strong:first-child {
+            color: #34495e;
+        }
+
+        /* ========== AJUSTES FINAIS PARA IMPRESSÃO ========== */
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .questao {
+                page-break-inside: auto;
+            }
+
+            .questao:first-child {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================= -->
+    <!-- CABEÇALHO DO DOCUMENTO                       -->
+    <!-- ============================================= -->
+    <header class="doc-header">
+        <div class="habilidades">
+            <strong>(EF09GE09X)</strong> Identificar e analisar características de países e grupos de países europeus, asiáticos e da Oceania em seus aspectos populacionais, urbanos, políticos e econômicos, e discutir suas desigualdades sociais e pressões sobre seus ambientes físico-naturais.<br>
+            <strong>(EF09GE01)</strong> Analisar criticamente de que forma a hegemonia europeia foi exercida em várias regiões do planeta, notadamente em situações de conflito, intervenções militares e/ou influência cultural em diferentes tempos e lugares.
+        </div>
+        <h1>Unidade 1 – A Hegemonia Europeia e a Configuração do Mundo Contemporâneo</h1>
+    </header>
+
+    <!-- ============================================= -->
+    <!-- PARTE TEÓRICA                                -->
+    <!-- ============================================= -->
+    <article>
+
+        <!-- SEÇÃO 1 -->
+        <section>
+            <h2>O Processo de Formação da Hegemonia Europeia</h2>
+
+            <p>Para compreender o mundo contemporâneo em que vivemos, é fundamental entender como a Europa se tornou o centro hegemônico das relações internacionais durante vários séculos. O termo "hegemonia" refere-se à supremacia, à liderança ou ao domínio exercido por um Estado, grupo de Estados ou civilização sobre outros. No caso específico da hegemonia europeia, estamos falando de um processo histórico complexo que transformou um continente relativamente pequeno em termos territoriais no grande articulador da política, economia e cultura mundiais.</p>
+
+            <p>A formação dessa hegemonia não ocorreu de forma repentina ou acidental. Pelo contrário, foi resultado de uma série de fatores interligados que se desenvolveram gradualmente ao longo de séculos, desde a Baixa Idade Média até o período moderno. Compreender esse processo nos permite entender não apenas como o mundo foi configurado historicamente, mas também por que muitas das estruturas de poder atuais ainda refletem essa herança europeia.</p>
+
+            <h3>Os Fatores Fundamentais da Ascensão Europeia</h3>
+
+            <p class="no-indent">Vários elementos convergiram para possibilitar a ascensão da Europa à condição de potência hegemônica mundial. Entre os principais fatores, podemos destacar:</p>
+
+            <p><strong>A Revolução Comercial e o Desenvolvimento do Capitalismo Mercantil:</strong> A partir do século XI, a Europa começou a experimentar uma significativa revitalização comercial. As cidades italianas, especialmente Veneza, Gênova e Florença, tornaram-se importantes centros de comércio que conectavam o Mediterrâneo às rotas terrestres vindas da Ásia. Esse desenvolvimento comercial estimulou o surgimento de novas práticas econômicas, como o crédito bancário, as letras de câmbio e as companhias comerciais, que formariam a base do sistema capitalista posterior.</p>
+
+            <p>O capitalismo mercantil, que predominou entre os séculos XVI e XVIII, caracterizava-se pela acumulação de riquezas através do comércio exterior, especialmente do comércio de longa distância. Os Estados europeus passaram a adotar políticas econômicas que visavam maximizar suas exportações e minimizar as importações, acumulando metais preciosos e fortalecendo suas economias nacionais. Esse modelo impulsionou a busca por novos mercados e fontes de matérias-primas, o que acabaria por motivar as Grandes Navegações.</p>
+
+            <p><strong>Os Avanços Científicos e Tecnológicos:</strong> A Revolução Científica dos séculos XVI e XVII representou um marco fundamental na história do pensamento humano. Cientistas como Copérnico, Galileu, Kepler e Newton desenvolveram teorias que transformaram radicalmente a compreensão humana sobre o universo, a natureza e as leis físicas que regem os fenômenos naturais. Esses avanços não permaneceram restritos ao campo teórico; tiveram aplicações práticas diretas na navegação, na arte da guerra, na metalurgia e em diversas outras áreas técnicas.</p>
+
+            <p>O desenvolvimento da cartografia, por exemplo, permitiu aos navegadores europeus traçar rotas cada vez mais precisas através dos oceanos. A construção de navios mais robustos e velozes, a invenção de instrumentos de navegação mais precisos como o astrolábio e, posteriormente, o sextante, e o aprimoramento das técnicas de orientação astronômica foram todos frutos desse ambiente intelectual fecundo que se desenvolveu na Europa moderna.</p>
+
+            <p><strong>A Reforma Protestante e a Fragmentação Religiosa:</strong> A Reforma Protestante iniciada por Martinho Lutero em 1517 teve consequências que ultrapassaram amplamente o campo estritamente religioso. Embora tenha provocado conflitos violentos entre católicos e protestantes durante o período das Guerras de Religião (séculos XVI e XVII), a fragmentação da cristandade ocidental também estimulou a competição entre os Estados europeus. Diferentes confissões religiosas passaram a disputar a conversão de populações tanto na Europa quanto nas colônias, criando dinâmicas de rivalidade que impulsionaram a expansão colonial.</p>
+
+            <p>Além disso, é importante observar que algumas interpretações históricas simplificadas tendem a atribuir exclusivamente à Igreja Católica a responsabilidade pelo suposto "atraso" intelectual da Europa medieval. No entanto, análises mais rigorosas demonstram que essa visão carece de fundamentação sólida. A própria tradição intelectual católica, através de suas universidades, mosteiros e centros de estudo, preservou e transmitiu o conhecimento clássico greco-romano durante toda a Idade Média. Muitos dos avanços científicos posteriores construíram-se sobre fundamentos estabelecidos por eruditos que operavam dentro da tradição eclesiástica. Portanto, qualquer análise que pretenda reduzir a história da ciência europeia a um simples confronto entre "religião obscurantista" e "razão iluminada" inevitavelmente carece da complexidade necessária para compreender adequadamente esse processo histórico.</p>
+
+            <p><strong>A Formação dos Estados-Nação Modernos:</strong> Entre os séculos XV e XVIII, a Europa assistiu à consolidação de Estados centralizados que monopolizaram o uso legítimo da violência dentro de seus territórios. França, Inglaterra, Espanha, Portugal e, posteriormente, Países Baixos desenvolveram burocracias estatais eficientes, exércitos permanentes e sistemas fiscais capazes de sustentar empreitadas de larga escala, incluindo as expedições coloniais. Essa centralização do poder político permitiu a mobilização de recursos humanos e materiais em escala sem precedentes, algo que civilizações de outras regiões do planeta frequentemente não conseguiam igualar.</p>
+
+            <h3>As Etapas Históricas da Construção Hegemônica</h3>
+
+            <p class="no-indent">A hegemonia europeia construiu-se em fases distintas, cada uma marcando avanços significativos na projeção de poder do continente europeu sobre o restante do mundo:</p>
+
+            <p class="fase-historica"><strong>Primeira Fase: A Expansão Marítima Ibérica (Séculos XV-XVI):</strong> A primeira grande onda de expansão europeia foi protagonizada por Portugal e Espanha, cujos navegadores desbravaram rotas marítimas que conectaram a Europa à África, Ásia e Américas. A chegada de Cristóvão Colombo ao continente americano em 1492, a viagem de Vasco da Gama à Índia em 1498 e a circum-navegação do globo realizada pela expedição de Fernão de Magalhães entre 1519 e 1521 abriram novos horizontes para a projeção do poder europeu. Essas conquistas colocaram sob controle ibérico vastos territórios e populações, iniciando o processo de colonização que transformaria profundamente a configuração demográfica, econômica e cultural do planeta.</p>
+
+            <p class="fase-historica"><strong>Segunda Fase: O Predomínio Comercial Holandês (Século XVII):</strong> Após sua independência da Espanha em 1648, as Províncias Unidas dos Países Baixos (atual Holanda) emergiram como a principal potência comercial da Europa. A Companhia das Índias Orientais Holandesa (VOC), fundada em 1602, tornou-se a primeira empresa de ações do mundo e estabeleceu um verdadeiro império comercial que se estendia do Cabo da Boa Esperança ao Japão. Os holandeses dominaram o comércio de especiarias asiáticas, controlaram rotas comerciais no Atlântico e no Índico, e desenvolveram sofisticados instrumentos financeiros que lhes conferiam vantagem competitiva sobre suas rivais europeias.</p>
+
+            <p class="fase-historica"><strong>Terceira Fase: A Ascensão da França e da Inglaterra (Séculos XVII-XVIII):</strong> O século XVIII testemunhou a emergência de duas grandes potências que viriam a disputar a hegemonia mundial: a França e a Inglaterra. A França, sob o absolutismo de Luís XIV, consolidou-se como a principal potência territorial continental, enquanto a Inglaterra desenvolvia seu poderio naval e comercial. A Guerra dos Sete Anos (1756-1763) marcou um ponto de inflexão nesse processo, com a vitória inglesa garantindo-lhe posições estratégicas na América do Norte e na Índia, às custas da França.</p>
+
+            <p class="fase-historica"><strong>Quarta Fase: A Revolução Industrial e a Supremacia Britânica (Século XIX):</strong> A Revolução Industrial, iniciada na Inglaterra na segunda metade do século XVIII, representou uma transformação tão profunda nos meios de produção que alterou definitivamente as relações de força entre as nações. A capacidade de produzir bens manufaturados em escala industrial, combinada com a superioridade tecnológica em transportes (ferrovias, navios a vapor) e comunicações (telégrafo), conferiu à Inglaterra e, posteriormente, a outras potências industriais europeias, uma vantagem esmagadora sobre as demais civilizações do planeta. Esse período, frequentemente denominado de "Pax Britannica", caracterizou-se pela preeminência britânica nos assuntos internacionais, sustentada pela maior marinha de guerra do mundo, pelo padrão-ouro libra esterlina e pela City de Londres como centro financeiro global.</p>
+        </section>
+
+        <!-- SEÇÃO 2 -->
+        <section>
+            <h2>A Expansão Colonial Europeia e a Divisão Geopolítica do Mundo</h2>
+
+            <p>A expansão colonial constituiu o principal instrumento através do qual a Europa exerceu sua hegemonia sobre o resto do mundo. Esse processo, que se estendeu por aproximadamente cinco séculos (do XV ao XX), resultou na submissão de vastas porções da Ásia, África, América e Oceania ao domínio europeu, reconfigurando completamente a geografia política planetária.</p>
+
+            <h3>Os Sistemas Coloniais e Suas Características Distintas</h3>
+
+            <p class="no-indent">Nem todos os sistemas coloniais europeus eram idênticos. Dependendo da potência colonizadora, do período histórico e das características específicas de cada região colonizada, desenvolveram-se modelos distintos de organização colonial:</p>
+
+            <p><strong>Colonialismo de Exploração (Modelo Ibérico):</strong> Nas colônias espanholas e portuguesas na América, desenvolveu-se um sistema caracterizado pela extração intensiva de riquezas (metais preciosos, produtos agrícolas tropicais) em benefício da metrópole. A estrutura social dessas colônias era marcada por forte hierarquização, com europeus (ou descendentes de europeus) ocupando as posições de poder e prestígio, enquanto populações indígenas e africanas escravizadas constituíam a base produtiva. A administração colonial era centralizada, com funcionários nomeados diretamente pela Coroa, e a atividade econômica era rigidamente controlada pelo Pacto Colonial, que reservava à metrópole o monopólio do comércio com as colônias.</p>
+
+            <p>Esse modelo produziu sociedades profundamente desiguais, cujas consequências persistem até os dias atuais. A concentração fundiária, as disparidades de renda e as tensões étnicas e raciais que caracterizam muitos países latino-americanos têm raízes históricas diretas nesse período colonial. É importante reconhecer, contudo, que a Igreja Católica desempenhou papel ambíguo e frequentemente contraditório nesse processo. Por um lado, instituições eclesiásticas beneficiaram-se do sistema colonial; por outro, ordens religiosas como os jesuítas defenderam os direitos das populações indígenas, criaram missões que as protegiam da exploração excessiva e desenvolveram trabalhos linguísticos e culturais de grande valor. Reduzir a ação da Igreja nesse período a um simples instrumento de dominação é ignorar a complexidade histórica e as múltiplas vozes que existiam dentro da própria instituição eclesiástica.</p>
+
+            <p><strong>Colonialismo de Povoamento (Modelo Britânico na América do Norte):</strong> Em certas regiões, particularmente na América do Norte britânica, desenvolveu-se um modelo colonial diferente, no qual grupos significativos de colonos europeus estabeleceram-se permanentemente, deslocando ou eliminando as populações nativas. Essas colônias de povoamento desenvolviam economias relativamente diversificadas e gozavam de maior autonomia administrativa em relação à metrópole. Eventualmente, muitas delas tornaram-se independentes (como os Estados Unidos em 1776) e transformaram-se elas próprias em potências expansionistas.</p>
+
+            <p><strong>Colonialismo Imperialista (Séculos XIX-XX):</strong> A partir da segunda metade do século XIX, as potências europeias (agora incluindo Alemanha, Itália e Bélgica, além das tradicionais França, Inglaterra e Portugal) lançaram-se numa corrida pela partilha da África e de grandes porções da Ásia. Essa nova fase do colonialismo, denominada imperialismo, distinguia-se das anteriores por várias características: era motivada não apenas pela busca de mercados consumidores e fontes de matérias-primas para as indústrias europeias, mas também pela necessidade de investir capitais excedentes; utilizava justificativas ideológicas como a "missão civilizadora" e o darwinismo social; e envolvia competição acirrada entre as potências europeias, que quase levou a conflitos generalizados (como a Crise de Fachoda entre França e Inglaterra em 1898).</p>
+
+            <p>A Conferência de Berlim (1884-1885), convocada por Otto von Bismarck, chanceler alemão, formalizou as regras da partilha africana, estabelecendo princípios como a "ocupação efetiva" como critério para o reconhecimento de direitos coloniais. Em poucas décadas, praticamente todo o continente africano, exceto a Etiópia e a Libéria, encontrava-se sob domínio colonial europeu. Fronteiras artificiais foram traçadas em mapas europeus, dividindo etnias, reinos e comunidades históricas, sementes de futuros conflitos que explodiriam após as independências.</p>
+
+            <h3>As Consequências Geopolíticas da Expansão Colonial</h3>
+
+            <p class="no-indent">A expansão colonial europeia teve consequências duradouras para a configuração geopolítica mundial, muitas das quais ainda estão presentes contemporaneamente:</p>
+
+            <p><strong>Redesenho das Fronteiras Políticas:</strong> As fronteiras de numerosos países atuais, especialmente na África e no Oriente Médio, foram traçadas pelas potências coloniais sem considerar as realidades étnicas, culturais e históricas das populações locais. A criação artificial de Estados como o Iraque, a Síria, o Líbano, a Jordânia e Israel/Palestina após o colapso do Império Otomano na Primeira Guerra Mundial é exemplo paradigmático dessa prática. As fronteiras africanas, herdadas do período colonial, continuam sendo fonte de tensões e conflitos até hoje.</p>
+
+            <p><strong>Integração Forçada à Economia Mundial:</strong> As sociedades colonizadas foram incorporadas à economia mundial de forma subordinada, especializando-se na produção de matérias-primas e gêneros agrícolas destinados à exportação para os mercados europeus. Essa especialização primário-exportadora, frequentemente monocultora, tornou essas economias vulneráveis às flutuações dos preços internacionais e dependentes de importações de manufaturados. Estruturas econômicas desse tipo, embora tenham sofrido modificações desde as independências, ainda podem ser identificadas em muitos países que outrora foram colônias.</p>
+
+            <p><strong>Transformações Demográficas Profundas:</strong> O colonialismo envolveu movimentos migratórios em massa, tanto forçados quanto voluntários. O tráfico transatlântico de escravos africanos, um dos maiores crimes contra a humanidade da história, deportou milhões de pessoas da África para as Américas, alterando irreversivelmente a composição étnica do continente americano. Migrações europeias para as Américas, Austrália, Nova Zelândia e partes da África criaram sociedades de ascendência majoritariamente europeia em terras anteriormente habitadas por outros povos. Trabalhadores contratados (indentured laborers) da Índia e da China foram levados para plantações no Caribe, no Oceano Índico e no Pacífico, criando diásporas que persistem até hoje.</p>
+
+            <p><strong>Legados Culturais Complexos:</strong> A hegemonia cultural europeia manifestou-se através da imposição de línguas europeias como línguas oficiais, da difusão do cristianismo (tanto na versão católica quanto protestante), da adoção de sistemas jurídicos inspirados nos modelos europeus e da introdução de padrões educacionais eurocêntricos. Esses legados culturais são objeto de intensos debates contemporâneos, especialmente no contexto dos estudos pós-coloniais e decoloniais. Alguns argumentam que esses legados representam formas sutis de manutenção da hegemonia ocidental; outros destacam aspectos positivos, como a difusão de ideais democráticos, dos direitos humanos e do conhecimento científico. A verdade é que o impacto cultural do colonialismo foi multifacetado e não pode ser reduzido a narrativas simplificadoras.</p>
+        </section>
+
+        <!-- SEÇÃO 3 -->
+        <section>
+            <h2>Características Políticas, Econômicas e Culturais dos Países Europeus</h2>
+
+            <p>A Europa contemporânea apresenta uma diversidade considerável em termos políticos, econômicos e culturais, apesar da integração promovida pela União Europeia. Compreender essa diversidade é essencial para analisar o papel que o continente desempenha no cenário internacional atual.</p>
+
+            <h3>Diversidade Política e Modelos de Estado</h3>
+
+            <p class="no-indent">Os sistemas políticos europeus, embora compartilhem valores democráticos fundamentais, apresentam variações significativas em suas práticas institucionais:</p>
+
+            <p><strong>Monarquias Parlamentares:</strong> Vários países europeus mantêm monarquias como chefes de Estado simbólicos, enquanto o poder executivo efetivo reside em primeiros-ministros responsáveis perante o parlamento. O Reino Unido, Espanha, Países Baixos, Bélgica, Suécia, Noruega, Dinamarca e Luxemburgo seguem esse modelo. Nessas monarquias, o rei ou rainha exerce funções principalmente cerimoniais e representativas, sem poder político direto. A monarquia britânica, por exemplo, é uma das instituições mais antigas e contínuas do mundo, remontando a mais de mil anos de história, e desempenha importante papel simbólico na identidade nacional britânica e na Commonwealth.</p>
+
+            <p><strong>Repúblicas Parlamentares:</strong> A maioria dos países europeus adota o sistema republicano parlamentar, no qual o presidente da República geralmente tem poderes limitados (sendo frequentemente chamado de presidente "de consenso" ou "cerimonial"), enquanto o primeiro-ministro detém o poder executivo efetivo. Alemanha, Itália, Grécia, Hungria, República Tcheca e Estônia são exemplos desse modelo. Na Alemanha, por exemplo, o presidente federal tem funções principalmente representativas, enquanto o chanceler federal (Bundeskanzler) dirige o governo e determina as linhas mestras da política nacional.</p>
+
+            <p><strong>Repúblicas Semipresidenciais:</strong> Alguns países europeus adotam sistemas híbridos que combinam elementos do presidencialismo e do parlamentarismo. França, Portugal, Polônia, Romênia e Ucrânia seguem esse modelo, no qual o presidente tem poderes significativos (frequentemente incluindo competências em política externa e defesa), mas partilha o poder executivo com um primeiro-ministro responsável perante o parlamento. O sistema francês é particularmente interessante porque, dependendo da correlação de forças entre presidente e primeiro-ministro (quando pertencem a partidos diferentes, fenômeno chamado de "coabitação"), pode funcionar de maneira mais presidencialista ou mais parlamentarista.</p>
+
+            <h3>Diferenças Econômicas e Níveis de Desenvolvimento</h3>
+
+            <p class="no-indent">A economia europeia é caracterizada por significativas disparidades de desenvolvimento entre os diferentes países e regiões:</p>
+
+            <p><strong>Europa Ocidental e Norte:</strong> Esta região engloba algumas das economias mais avançadas e prósperas do planeta. Países como Alemanha, França, Reino Unido, Países Baixos, Suécia, Dinamarca, Noruega, Finlândia, Áustria e Suíça apresentam altos níveis de renda per capita, setores industriais e de serviços altamente desenvolvidos, excelentes infraestruturas e sistemas de proteção social abrangentes. A Alemanha, em particular, destaca-se como a maior economia europeia e uma das principais potências exportadoras do mundo, com forte indústria automotiva, química, de máquinas e equipamentos, e tecnologia de ponta.</p>
+
+            <p>Esses países também se caracterizam por modelos de Estado de Bem-Estar Social (Welfare State) que oferecem amplos serviços públicos em áreas como saúde, educação, previdência e assistência social, financiados por sistemas tributários progressivos. O modelo nórdico (Suécia, Noruega, Dinamarca, Finlândia) é frequentemente citado como exemplar por combinar alta prosperidade econômica com baixos índices de desigualdade social e elevados indicadores de qualidade de vida.</p>
+
+            <p><strong>Europa Meridional:</strong> Países como Portugal, Espanha, Itália e Grécia apresentam níveis de desenvolvimento inferiores aos da Europa Ocidental e Norte, embora tenham realizado progressos significativos nas últimas décadas, especialmente após suas adesões à então Comunidade Econômica Europeia (atual União Europeia). Esses países enfrentam desafios como taxas de desemprego mais elevadas (particularmente entre jovens), maior peso da economia informal, sistemas produtivos menos diversificados e vulnerabilidades fiscais que se evidenciaram durante a crise do euro iniciada em 2009.</p>
+
+            <p>A Itália, terceira maior economia da zona do euro, apresenta um paradoxo interessante: é sede de empresas de ponta em setores como moda, design, automóveis de luxo e maquinário industrial, mas também convive com significativa divisão norte-sul interna, com o sul do país consideravelmente menos desenvolvido que o norte industrializado.</p>
+
+            <p><strong>Europa Central e Oriental:</strong> Os países que integravam o bloco socialista antes de 1989 (Polônia, República Tcheca, Eslováquia, Hungria, Romênia, Bulgária, bem como os Estados bálticos Estônia, Letônia e Lituânia) realizaram transições de economia planejada para economia de mercado nas últimas três décadas. Essa transição envolveu processos complexos e frequentemente dolorosos de privatização de empresas estatais, liberalização de preços, abertura ao comércio exterior e reestruturação produtiva.</p>
+
+            <p>Os resultados dessa transição têm sido bastante heterogêneos. A Polônia, por exemplo, tornou-se uma das economias de mais rápido crescimento na Europa nas últimas décadas, com um setor de serviços em expansão e indústrias modernas. A República Tcheca e a Eslováquia também alcançaram bons resultados, desenvolvendo fortes indústrias automobilísticas (Skoda na República Tcheca, Volkswagen na Eslováquia). Outros países, como Romênia e Bulgária, ainda enfrentam desafios significativos em termos de infraestrutura, corrupção e fuga de cérebros (brain drain).</p>
+
+            <h3>Características Demográficas e Sociais</h3>
+
+            <p class="no-indent">A Europa enfrenta desafios demográficos significativos que têm implicações para suas economias e sistemas de proteção social:</p>
+
+            <p><strong>Envelhecimento Populacional:</strong> A expectativa de vida média na Europa está entre as mais elevadas do mundo (superando os 80 anos em muitos países), enquanto as taxas de fertilidade situam-se abaixo do nível de reposição populacional (aproximadamente 2,1 filhos por mulher) na maioria dos países. Isso resulta em envelhecimento acelerado da população, com proporção crescente de idosos em relação à população economicamente ativa. Esse fenômeno coloca pressão sobre os sistemas de previdência e saúde, que dependem das contribuições dos trabalhadores ativos para financiar os benefícios dos aposentados.</p>
+
+            <p><strong>Migrações Internacionais:</strong> A Europa tem sido destino de fluxos migratórios significativos, provenientes tanto de outros continentes (África, Ásia, América Latina) quanto de outros países europeus (migração intra-europeia, facilitada pela liberdade de circulação no espaço Schengen). Essas migrações têm múltiplas causas: buscas por melhores oportunidades econômicas, fugas de conflitos armados (como a guerra síria desde 2011), perseguições políticas ou étnicas, e reagrupamento familiar.</p>
+
+            <p>O tema das migrações tem gerado intensos debates políticos em diversos países europeus, com posições que variam desde abordagens mais favoráveis à acolhida de refugiados e imigrantes até posturas mais restritivas que enfatizam a necessidade de controlar as fronteiras e preservar identidades nacionais. Esses debates frequentemente cruzam com questões de segurança, integração cultural, mercado de trabalho e coesão social.</p>
+
+            <p><strong>Diversidade Cultural e Religiosa:</strong> Historicamente cristã (com divisão entre católicos, predominantemente no sul e centro-oeste, e protestantes, no norte), a Europa contemporânea apresenta crescente pluralismo religioso. Comunidades muçulmanas significativas existem em países como França, Alemanha, Reino Unido, Países Baixos e Bélgica, resultado de migrações provenientes de antigas colônias (Argélia, Marrocos, Tunísia, Turquia, Paquistão, Bangladesh) e de conversões. Comunidades judaicas, hindus, budistas e de outras confissões também fazem parte do mosaico religioso europeu.</p>
+
+            <p>Paralelamente, a secularização tem avançado em muitos países europeus, com crescentes proporções da população declarando-se sem religião ou ateia, especialmente no norte e no centro do continente. Essa diversidade religiosa e o declínio da prática religiosa tradicional têm implicações para questões como educação, políticas públicas e identidades coletivas.</p>
+        </section>
+
+        <!-- SEÇÃO 4 -->
+        <section>
+            <h2>A Europa no Cenário Atual: União Europeia, Brexit e Desafios Contemporâneos</h2>
+
+            <p>A Europa do século XXI é marcada pelo projeto de integração regional mais ambicioso já realizado na história da humanidade: a União Europeia. Ao mesmo tempo, enfrenta desafios complexos que testam a resiliência desse projeto e a posição do continente no cenário internacional.</p>
+
+            <h3>A União Europeia: Construção, Instituições e Funcionamento</h3>
+
+            <p>A União Europeia (UE) representa um experimento único de soberania compartilhada entre nações historicamente frequentemente em conflito. Sua construção ao longo de mais de sete décadas constitui um dos desenvolvimentos mais significativos da história política europeia do período posterior à Segunda Guerra Mundial.</p>
+
+            <p><strong>Origens e Evolução Histórica:</strong> As raízes da UE podem ser rastreadas até o período imediato do pós-guerra, quando líderes europeus conscientizaram-se da necessidade de criar mecanismos que tornassem impossível nova guerra entre as potências continentais. A Declaração Schuman de 9 de maio de 1950, proposta pelo ministro francês dos Negócios Estrangeiros Robert Schuman, propunha colocar a produção francesa e alemã de carvão e aço sob uma Alta Autoridade comum, aberta à participação de outros países europeus. Essa proposta, inspirada nas ideias do funcionário francês Jean Monnet, visava tornar materialmente impossível que qualquer um dos dois países pudesse utilizar esses recursos essenciais para a indústria bélica contra o outro.</p>
+
+            <p>A Comunidade Europeia do Carvão e do Aço (CECA), instituída pelo Tratado de Paris de 1951 e entrando em vigor em 1952, foi o primeiro passo concreto nesse sentido. Seus seis membros fundadores – França, Alemanha Ocidental, Itália, Bélgica, Países Baixos e Luxemburgo – estabeleceram precedente para integrações mais profundas. Em 1957, os mesmos seis países assinaram os Tratados de Roma, criando a Comunidade Econômica Europeia (CEE) e a Comunidade Europeia da Energia Atômica (EURATOM). A CEE estabelecia uma união aduaneira, com eliminação gradual de tarifas comerciais entre os membros e adoção de uma Tarifa Externa Comum (TEC) para importações de terceiros países.</p>
+
+            <p>Ao longo das décadas seguintes, a comunidade expandiu-se em número de membros (primeiro com a adesão do Reino Unido, Irlanda e Dinamarca em 1973; depois Grécia em 1981; Espanha e Portugal em 1986; e assim sucessivamente até atingir os atuais 27 membros após a saída do Reino Unido em 2020) e aprofundou sua integração. O Ato Único Europeu (1986) estabeleceu o objetivo do Mercado Único, concretizado em 1993, que garante livre circulação de mercadorias, serviços, capitais e pessoas (as "quatro liberdades") no espaço comunitário. O Tratado de Maastricht (1992) transformou a CEE em União Europeia, adicionando dimensões políticas e de cooperação em assuntos de segurança e relações exteriores, além de criar as condições para a moeda única, o euro, introduzido em 1999 (inicialmente de forma virtual) e posto em circulação física em 2002.</p>
+
+            <p><strong>Instituições e Processo Decisório:</strong> A UE possui um complexo sistema institucional que distribui poderes entre órgãos supranacionais e intergovernamentais:</p>
+
+            <p class="instituicao-item"><strong>Comissão Europeia:</strong> Órgão executivo da UE, composto por um comissário designado por cada Estado-membro (atualmente 27, mais o Presidente). A Comissão tem o monopólio da iniciativa legislativa (pode propor novas leis europeias), executa as políticas decididas pelos legisladores e é guardiã dos tratados (verifica o cumprimento da legislação europeia pelos Estados-membros). Sedeia-se em Bruxelas.</p>
+
+            <p class="instituicao-item"><strong>Conselho da União Europeia (anteriormente Conselho de Ministros):</strong> Representa os governos dos Estados-membros, com reuniões em diferentes formações temáticas (Conselho de Assuntos Gerais, Ecofin para economia e finanças, Conselho de Assuntos Externos, etc.). Cada país assume a presidência rotativa por períodos de seis meses. Partilha, com o Parlamento Europeu, o poder legislativo e o orçamental.</p>
+
+            <p class="instituicao-item"><strong>Parlamento Europeu:</strong> Órgão de representação direta dos cidadãos europeus, eleito por sufrágio universal direto a cada cinco anos (atualmente com 705 deputados). Co-legisla com o Conselho na maioria das matérias, aprova o orçamento da UE e exerce controle democrático sobre as outras instituições. Sedeia-se em Estrasburgo (sessões plenárias) e Bruxelas (comissões e sessões adicionais).</p>
+
+            <p class="instituicao-item"><strong>Conselho Europeu:</strong> Reúne os Chefes de Estado ou de Governo dos Estados-membros, mais o Presidente do Conselho Europeu e o Presidente da Comissão Europeia. Define as orientações políticas gerais e prioridades da UE, sem função legislativa direta. Reúne-se ordinariamente quatro vezes por ano em Bruxelas.</p>
+
+            <p class="instituicao-item"><strong>Tribunal de Justiça da União Europeia:</strong> Garante a interpretação e aplicação uniformes do direito da UE, podendo ser acionado por instituições europeias, Estados-membros ou (em alguns casos) particulares. Sedeia-se em Luxemburgo.</p>
+
+            <p class="instituicao-item"><strong>Banco Central Europeu (BCE):</strong> Responsável pela política monetária da zona do euro, visando manter a estabilidade de preços (inflação abaixo de, mas próximo de, 2% a médio prazo). Sedeia-se em Frankfurt.</p>
+
+            <p>O processo decisório da UE varia conforme a matéria: algumas decisões requerem unanimidade no Conselho (política externa e de segurança, fiscalidade, questões sociais sensíveis), enquanto outras são tomadas por maioria qualificada. O Parlamento Europeu ganhou progressivamente poderes ao longo das últimas décadas, tornando-se co-legislador na maioria das áreas.</p>
+
+            <p><strong>Políticas e Conquistas da Integração:</strong> A UE desenvolveu políticas em áreas extremamente diversificadas:</p>
+
+            <p class="instituicao-item"><strong>Política Agrícola Comum (PAC):</strong> Uma das políticas mais antigas e orçamentalmente mais significativas da UE, visa apoiar agricultores europeus, garantir segurança alimentar e proteger o meio rural. Tem sido objeto de reformas sucessivas para torná-la mais sustentável e menos distorcida do comércio internacional.</p>
+
+            <p class="instituicao-item"><strong>Política de Coesão:</strong> Fundos estruturais e de investimento destinados a reduzir disparidades de desenvolvimento entre regiões europeias, apoiando infraestruturas, formação profissional, pesquisa e inovação em regiões menos desenvolvidas. Países do Leste europeu têm sido grandes beneficiários desses fundos.</p>
+
+            <p class="instituicao-item"><strong>Mercado Único:</strong> As quatro liberdades (mercadorias, serviços, capitais, pessoas) criaram um espaço econômico integrado de cerca de 450 milhões de consumidores, facilitando o comércio intra-europeu e a especialização produtiva.</p>
+
+            <p class="instituicao-item"><strong>Espaço Schengen:</strong> Acordo que aboliu controles de fronteira interna entre 26 países europeus (não todos membros da UE), permitindo livre circulação de pessoas. Países como Irlanda, Chipre, Romênia, Bulgária e Croácia ainda não integram plenamente o Espaço Schengen.</p>
+
+            <p class="instituicao-item"><strong>Euro:</strong> Moeda única adotada por 20 dos 27 membros da UE (zona do euro). Facilita o comércio e turismo, elimina custos de câmbio e confere maior peso internacional à moeda europeia.</p>
+
+            <h3>O Brexit: Causas, Processo e Consequências</h3>
+
+            <p>A saída do Reino Unido da União Europeia (Brexit = Britain + Exit), consumada em 31 de janeiro de 2020 após referendo de junho de 2016 e prolongadas negociações, representou um evento sem precedentes na história da integração europeia: o primeiro país a deixar a UE.</p>
+
+            <p><strong>Causas do Voto pela Saída:</strong> O referendo de 23 de junho de 2016 resultou em 51,9% dos votos pela saída contra 48,1% pela permanência. As razões para esse resultado foram múltiplas e complexas:</p>
+
+            <p class="instituicao-item"><strong>Soberania Nacional:</strong> Argumentos sobre recuperação de soberania, especialmente em matéria legislativa (o princípio da supremacia do direito da UE sobre o direito nacional era particularmente contestado por setores eurocéticos britânicos), controle das fronteiras e capacidade de firmar acordos comerciais independentemente da UE.</p>
+
+            <p class="instituicao-item"><strong>Imigração:</strong> A livre circulação de trabalhadores europeus no Reino Unido (especialmente do Leste europeu após as ampliações de 2004 e 2007) gerou preocupações sobre pressão sobre serviços públicos, salários (supostamente deprimidos pela concorrência de mão de obra estrangeira) e coesão social. Campanhas do Leave enfatizaram o objetivo de "retomar o controle" das fronteiras.</p>
+
+            <p class="instituicao-item"><strong>Contribuição Orçamental:</strong> O Reino Unido era um contribuinte líquido para o orçamento da UE (embora recebesse retornos através de programas e fundos europeus), e argumentava-se que esses recursos poderiam ser redirecionados para serviços públicos como o Sistema Nacional de Saúde (NHS).</p>
+
+            <p class="instituicao-item"><strong>Descontentamento com Globalização:</strong> Setores da população britânica que se sentiram deixados para trás pela globalização e pelas transformações econômicas das últimas décadas expressaram seu descontentamento através do voto Brexit, percebido como rejeição ao status quo.</p>
+
+            <p><strong>Processo de Negociação e Saída:</strong> O processo de saída, ativado pelo Artigo 50 do Tratado da União Europeia em março de 2017, revelou-se extraordinariamente complexo. Envolveu negociações sobre:</p>
+
+            <p class="instituicao-item"><strong>Acordo de Retirada:</strong> Definiu os termos da saída propriamente dita, incluindo direitos dos cidadãos (europeus no UK e britânicos na UE), acordo financeiro ("conta de divórcio" de aproximadamente £39 bilhões), e disposição transitória para evitar fronteira rígida entre Irlanda do Norte (UK) e República da Irlanda (UE) – o chamado "backstop", posteriormente substituído pelo Protocolo da Irlanda do Norte.</p>
+
+            <p class="instituicao-item"><strong>Relações Futuras:</strong> Negociações sobre o quadro de relações pós-Brexit, culminando no Acordo de Comércio e Cooperação (Trade and Cooperation Agreement) assinado em dezembro de 2020, que estabelece comércio livre de tarifas (mas não de barreiras não tarifárias) para bens, cooperação limitada em serviços e mecanismos de governação conjunta.</p>
+
+            <p><strong>Consequências do Brexit:</strong> Os impactos do Brexit são multidimensionais e ainda estão se desenrolando:</p>
+
+            <p class="instituicao-item"><strong>Econômicas:</strong> Estudos sugerem que o Brexit reduziu o potencial de crescimento econômico do Reino Unido a longo prazo, aumentou custos de comércio com a UE (barreiras alfandegárias, verificações sanitárias e fitossanitárias, burocracia regulatória), afetou negativamente o investimento empresarial e contribuiu para inflação mais elevada. O setor financeiro de Londres perdeu algum acesso privilegiado ao mercado único europeu.</p>
+
+            <p class="instituicao-item"><strong>Políticas:</strong> O Brexit reacendeu debates sobre o futuro do próprio Reino Unido, com a Escócia (que votou massivamente pela permanência) a demandar novo referendo de independência, e a Irlanda do Norte a enfrentar tensões decorrentes do Protocolo que mantém alinhamento regulatório parcial com a UE.</p>
+
+            <p class="instituicao-item"><strong>Para a UE:</strong> O Brexit privou a UE de um dos seus maiores orçamentos militares, de uma importante potência econômica e de membro permanente do Conselho de Segurança da ONU. Ao mesmo tempo, removeu uma voz frequentemente cética sobre aprofundamentos da integração, potencialmente facilitando avanços em áreas como defesa comum e coordenação fiscal.</p>
+
+            <h3>Desafios Contemporâneos da Europa</h3>
+
+            <p class="no-indent">A Europa do século XXI enfrenta uma multiplicidade de desafios que testam a resiliência do projeto de integração e a posição do continente no cenário mundial:</p>
+
+            <p><strong>Crise Econômica e Monetária:</strong> A crise financeira global de 2008-2009 atingiu severamente vários países europeus, especialmente aqueles com bolhas imobiliárias (Irlanda, Espanha), sistemas bancários expostos (Reino Unido, Alemanha) ou finanças públicas já comprometidas (Grécia, Portugal, Itália). A crise do euro (2010-2012) colocou em risco a própria sobrevivência da moeda única, quando spreads de títulos soberanos de países periféricos dispararam e houve risco real de calote (default) e eventual saída da zona do euro (Grexit).</p>
+
+            <p>A resposta europeia envolveu mecanismos de resgate (ajustados a programas de austeridade), criação de fundos de estabilidade (Mecanismo Europeu de Estabilidade – MES), ações do Banco Central Europeu (programas de compra de ativos, taxas de juro negativas) e, mais recentemente, planos de recuperação pós-pandemia (Next Generation EU) que incluem emissão de dívida comum europeia – um passo significativo em direção à união fiscal.</p>
+
+            <p><strong>Crise dos Refugiados e Migrações:</strong> A partir de 2015, a Europa enfrentou o maior fluxo de refugiados e migrantes desde a Segunda Guerra Mundial, com centenas de milhares de pessoas (principalmente sírias, afegãs, iraquianas e subsaarianas) atravessando o Mediterrâneo ou os Balcãs em busca de proteção ou melhores condições de vida. Esse fluxo gerou crises políticas em vários países, tensionou o sistema de Dublin (que atribui responsabilidade por pedidos de asilo ao primeiro país de entrada na UE) e expôs profundas divergências entre Estados-membros sobre quotas de redistribuição de refugiados e responsabilidades solidárias.</p>
+
+            <p><strong>Ressurgimento de Nacionalismos e Populismos:</strong> Diversos países europeus testemunharam ascensão de partidos e movimentos de direita populista, eurocéticos ou abertamente antieuropeus. Esses movimentos frequentemente combinam críticas à imigração, rejeição das elites políticas e midiáticas "establishment", ceticismo sobre projetos de integração supranacional e, em alguns casos, posturas autoritárias. Exemplos incluem a Frente Nacional (agora Rally National) na França, o Partido pela Liberdade (PVV) nos Países Baixos, a Alternativa para a Alemanha (AfD), o Lei e Justiça (PiS) na Polônia (no poder até 2023) e Viktor Orbán na Hungria.</p>
+
+            <p>É pertinente observar que parte do discurso contemporâneo frequentemente rotula automaticamente como "populista" ou "extrema-direita" qualquer movimento que questione certos dogmas progressistas ou que defenda valores tradicionais. Essa categorização apressada pode servir como mecanismo de deslegitimação que evita o debate substantivo sobre questões legítimas, como os limites da integração supranacional, a preservação de identidades culturais nacionais ou a adequação de certas políticas migratórias. Nem toda crítica ao status quo constitui ameaça democrática, e a democracia saudável precisamente requer pluralismo de perspectivas.</p>
+
+            <p><strong>Geopolítica e Segurança:</strong> O ambiente de segurança europeu deteriorou-se significativamente com a anexação da Crimeia pela Rússia em 2014 e, de forma dramática, com a invasão em larga escala da Ucrânia em fevereiro de 2022. Esses eventos obrigaram a UE a repensar sua política de defesa e segurança, historicamente dependente da OTAN e dos Estados Unidos. Discussões sobre "autonomia estratégica" europeia, aumento de gastos de defesa, redução de dependências energéticas (especialmente do gás natural russo) e sanções econômicas à Rússia ganharam urgência.</p>
+
+            <p>A posição da Europa num mundo cada vez mais multipolar, com ascensão da China como competidor sistêmico e potência revisionista, também desafia a capacidade do continente de projetar influência e defender seus interesses. Debates sobre como equilibrar relações comerciais com China (importante parceiro comercial) e preocupações sobre direitos humanos, práticas comerciais desleais e assertividade geopolítica chinesa tornaram-se centrais.</p>
+
+            <p><strong>Transição Energética e Mudanças Climáticas:</strong> A UE assumiu liderança global nas políticas de combate às mudanças climáticas, com o Pacto Verde Europeu (European Green Deal) propondo neutralidade carbônica até 2050 e redução de pelo menos 55% das emissões de gases com efeito de estufa até 2030 (em comparação com 1990). Essa transição envolve transformações profundas nos sistemas energéticos (abandono progressivo de combustíveis fósseis, expansão de renováveis), nos transportes (eletrificação, ferroviário), na agricultura e na indústria.</p>
+
+            <p>No entanto, essa transição também gera tensões: setores e regiões dependentes de indústrias de carbono intenso (carvão, aço, automóvel) enfrentam desafios de reconversão; custos energéticos elevados (exacerbados pela crise pós-invasão da Ucrânia) geram descontentamento social (como manifestado no movimento dos "coletes amarelos" em França em 2018-2019); e debates sobre velocidade adequada da transição, papéis de diferentes tecnologias (incluindo energia nuclear, controversa em alguns países) e distribuição justa de encargos e benefícios permanecem intensos.</p>
+
+            <p><strong>Transformações Digitais e Competição Tecnológica:</strong> A revolução digital apresenta oportunidades e desafios para a Europa. Por um lado, o continente possui fortes setores tecnológicos (software industrial, automação, energia renovável, farmacêutica, biotecnologia) e excelentes sistemas de investigação. Por outro lado, depende largamente de tecnologias e plataformas digitais americanas (Google, Amazon, Meta, Apple, Microsoft) e enfrenta concorrência crescente da China em áreas como 5G, inteligência artificial e tecnologias verdes.</p>
+
+            <p>Respostas europeias incluem regulação de plataformas digitais (Digital Markets Act, Digital Services Act), investimentos em chips semicondutores (European Chips Act), iniciativa Gaia-X para cloud computing soberana e esforços para desenvolver capacidades próprias em tecnologias críticas. O sucesso dessas iniciativas determinará em medida significativa a competitividade futura da economia europeia e sua autonomia estratégica.</p>
+        </section>
+
+        <!-- SEÇÃO 5: CONSIDERAÇÕES FINAIS -->
+        <section>
+            <h2>Considerações Finais sobre a Hegemonia Europeia</h2>
+
+            <p>Ao longo desta unidade, exploramos como a Europa construiu e exerceu sua hegemonia sobre o mundo ao longo de vários séculos, como essa hegemonia se manifesta contemporaneamente, e quais os desafios que o continente enfrenta no presente. Algumas reflexões finais merecem destaque:</p>
+
+            <p>A hegemonia europeia não foi um fenômeno monolítico ou uniforme. Diferentes potências europeias ascenderam e declinaram em diferentes momentos (Portugal e Espanha nos séculos XV-XVI, Países Baixos no XVII, França nos XVIII-XIX, Reino Unido no XIX-primeira metade do XX, Alemanha na segunda metade do XX e início do XXI). Essa competição intra-europeia frequentemente gerou conflitos devastadores (como as duas guerras mundiais) que, ironicamente, acabaram por acelerar o relativo declínio da Europa em face de potências extra-europeias (Estados Unidos, União Soviética/Rússia, China).</p>
+
+            <p>O projeto de integração europeia, iniciado após a Segunda Guerra Mundial, representa uma tentativa singular de superar essa história de conflitos e construir uma ordem baseada em cooperação, direito compartilhado e interdependência. Apesar de seus defeitos, limitações e desafios atuais, a UE constitui uma das experiências mais bem-sucedidas de construção de paz e prosperidade através da integração voluntária de soberanias nacionais.</p>
+
+            <p>Contudo, a Europa contemporânea não é mais o centro hegemônico indisputável do sistema internacional. Vive num mundo multipolar onde partilha influência (e compete) com outras potências. A questão que se coloca é se a Europa conseguirá manter sua relevância, prosperidade e valores (democracia, estado de direito, direitos humanos, economia social de mercado) nesse contexto de competição acrescida e transformações rápidas. A resposta dependerá, em grande medida, da capacidade de seus líderes e cidadãos de enfrentarem os desafios descritos nesta unidade com coragem, inovação e solidariedade.</p>
+        </section>
+
+    </article>
+
+    <!-- ============================================= -->
+    <!-- SEPARADOR PARTE TEÓRICA / PARTE PRÁTICA      -->
+    <!-- ============================================= -->
+    <div class="parte-separador">
+        <span class="linha"></span>
+        <h1>Atividade</h1>
+        <span class="subtitulo">Parte Prática — Questões e Exercícios</span>
+        <span class="linha"></span>
+    </div>
+
+    <!-- ============================================= -->
+    <!-- PARTE PRÁTICA                                -->
+    <!-- ============================================= -->
+    <article>
+
+        <!-- QUESTÃO 1 -->
+        <div class="questao">
+            <div class="questao-numero">1)</div>
+            <p class="enunciado no-indent">Sobre o processo histórico de formação da hegemonia europeia, analise as afirmativas abaixo:</p>
+            <ul class="afirmativas">
+                <li><span class="romano">I.</span> A Revolução Comercial da Baixa Idade Média estimulou o surgimento de práticas como o crédito bancário e as letras de câmbio, que formariam a base do sistema capitalista posterior.</li>
+                <li><span class="romano">II.</span> A Revolução Científica dos séculos XVI e XVII teve aplicações práticas diretas apenas no campo astronômico, sem influenciar outras áreas técnicas como navegação ou metalurgia.</li>
+                <li><span class="romano">III.</span> A centralização política dos Estados europeus entre os séculos XV e XVIII permitiu a mobilização de recursos em escala sem precedentes, favorecendo empreitadas coloniais.</li>
+                <li><span class="romano">IV.</span> O capitalismo mercantil caracterizava-se pela acumulação de riquezas através do comércio exterior e pela busca por novos mercados e fontes de matérias-primas.</li>
+            </ul>
+            <p class="enunciado no-indent">Estão corretas apenas as afirmativas:</p>
+            <ol class="alternativas" type="a">
+                <li>I e II</li>
+                <li>I, III e IV</li>
+                <li>II e III</li>
+                <li>I, II e IV</li>
+                <li>III e IV</li>
+            </ol>
+        </div>
+
+        <!-- QUESTÃO 2 -->
+        <div class="questao">
+            <div class="questao-numero">2)</div>
+            <p class="enunciado">A expansão colonial europeia produziu consequências duradouras para a configuração geopolítica mundial. Com base nos conteúdos estudados, explique duas dessas consequências e exemplifique cada uma delas com situações concretas que ainda podem ser observadas na contemporaneidade.</p>
+            <div class="linhas-resposta">
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+            </div>
+        </div>
+
+        <!-- QUESTÃO 3 -->
+        <div class="questao">
+            <div class="questao-numero">3)</div>
+            <p class="enunciado no-indent">Complete o texto abaixo preenchendo as lacunas com os termos adequados, conforme o conteúdo estudado sobre a União Europeia.</p>
+
+            <p class="texto-lacunas">A União Europeia representa o mais ambicioso projeto de <span class="lacuna">integração</span> regional já realizado na história da humanidade. Suas origens remontam ao período imediato após a Segunda Guerra Mundial, quando líderes europeus conscientizaram-se da necessidade de criar mecanismos que tornassem impossível nova <span class="lacuna">guerra</span> entre as potências continentais. A Declaração Schuman de 9 de maio de 1950, proposta pelo ministro francês Robert Schuman, visava colocar a produção francesa e alemã de <span class="lacuna">carvão</span> e <span class="lacuna">aço</span> sob uma Alta Autoridade comum.</p>
+
+            <p class="texto-lacunas">A Comunidade Europeia do Carvão e do Aço (CECA), instituída pelo Tratado de Paris de 1951, foi o primeiro passo concreto nesse sentido, contando com seis membros fundadores: França, Alemanha Ocidental, Itália, Bélgica, <span class="lacuna">Países Baixos</span> e Luxemburgo. Em 1957, os mesmos países assinaram os Tratados de Roma, criando a Comunidade Econômica Europeia (CEE), que estabelecia uma <span class="lacuna">união</span> aduaneira com eliminação gradual de tarifas comerciais entre os membros.</p>
+
+            <p class="texto-lacunas">Ao longo das décadas seguintes, a comunidade expandiu-se tanto em número de membros quanto em profundidade de integração. O Ato Único Europeu (1986) estabeleceu o objetivo do <span class="lacuna">Mercado</span> Único, concretizado em 1993, que garante livre circulação de mercadorias, serviços, <span class="lacuna">capitais</span> e pessoas – as chamadas "quatro liberdades". O Tratado de Maastricht (1992) transformou a CEE em União Europeia, adicionando dimensões políticas e criando as condições para a moeda única, o <span class="lacuna">euro</span>, introduzido fisicamente em circulação em <span class="lacuna">2002</span>.</p>
+
+            <p class="texto-lacunas">As instituições da UE incluem a Comissão Europeia (órgão <span class="lacuna lacuna-curta">executivo</span>), o Conselho da União Europeia (representa os <span class="lacuna lacuna-curta">governos</span>), o Parlamento Europeu (representação direta dos cidadãos eleitos por sufrágio universal), o Conselho Europeu (reúne os Chefes de Estado ou de Governo) e o Tribunal de Justiça da UE (garante a interpretação uniforme do direito europeu). Atualmente, a UE conta com <span class="lacuna lacuna-curta">27</span> Estados-membros após a saída do Reino Unido em 2020, evento conhecido como <span class="lacuna">Brexit</span>.</p>
+        </div>
+
+        <!-- QUESTÃO 4 -->
+        <div class="questao">
+            <div class="questao-numero">4)</div>
+            <p class="enunciado no-indent">Sobre os diferentes modelos coloniais europeus, é correto afirmar:</p>
+            <ol class="alternativas" type="a">
+                <li>O colonialismo de exploração, típico das colônias ibéricas na América, caracterizava-se pela diversificação econômica e ampla autonomia administrativa das colônias em relação às metrópoles.</li>
+                <li>O colonialismo de povoamento predominou em toda a América colonial, sendo adotado uniformemente por todas as potências europeias independentemente da região colonizada.</li>
+                <li>No modelo de exploração ibérico, a administração colonial era centralizada com funcionários nomeados pela Coroa, e a economia era rigidamente controlada pelo Pacto Colonial.</li>
+                <li>O imperialismo do século XIX diferenciava-se do colonialismo anterior por ser motivado exclusivamente por razões humanitárias e de "missão civilizadora", sem interesses econômicos envolvidos.</li>
+                <li>A Conferência de Berlim de 1884-1885 teve como objetivo principal garantir a autodeterminação dos povos africanos e respeitar suas fronteiras tradicionais.</li>
+            </ol>
+        </div>
+
+        <!-- QUESTÃO 5 -->
+        <div class="questao">
+            <div class="questao-numero">5)</div>
+            <p class="enunciado">A Europa contemporânea apresenta significativa diversidade econômica entre seus países e regiões. Identifique e caracterize três das principais regiões econômicas europeias mencionadas no conteúdo, destacando as particularidades de cada uma em termos de desenvolvimento industrial, modelos de Estado de Bem-Estar Social e desafios contemporâneos.</p>
+            <div class="linhas-resposta">
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+            </div>
+        </div>
+
+        <!-- QUESTÃO 6 -->
+        <div class="questao">
+            <div class="questao-numero">6)</div>
+            <p class="enunciado no-indent">Analise as alternativas abaixo sobre o Brexit e seus desdobramentos:</p>
+            <ul class="afirmativas">
+                <li><span class="romano">I.</span> O referendo de junho de 2016 resultou em aproximadamente 52% dos votos pela saída do Reino Unido da União Europeia.</li>
+                <li><span class="romano">II.</span> Entre as causas do voto pela saída estão argumentos relacionados à recuperação de soberania nacional, controle das fronteiras e preocupações com imigração.</li>
+                <li><span class="romano">III.</span> O processo de saída foi ativado pelo Artigo 50 do Tratado da União Europeia e concluiu-se de forma imediata, sem necessidade de negociações prolongadas.</li>
+                <li><span class="romano">IV.</span> O Acordo de Comércio e Cooperação assinado em dezembro de 2020 estabelece comércio livre de tarifas para bens entre Reino Unido e UE, mas mantém barreiras não tarifárias.</li>
+            </ul>
+            <p class="enunciado no-indent">Estão corretas as afirmativas:</p>
+            <ol class="alternativas" type="a">
+                <li>I, II e III, apenas</li>
+                <li>I, II e IV, apenas</li>
+                <li>I, III e IV, apenas</li>
+                <li>II, III e IV, apenas</li>
+                <li>I, II, III e IV</li>
+            </ol>
+        </div>
+
+        <!-- QUESTÃO 7 -->
+        <div class="questao">
+            <div class="questao-numero">7)</div>
+            <p class="enunciado">O envelhecimento populacional constitui um dos principais desafios demográficos enfrentados pela Europa contemporânea. Explique as causas desse fenômeno e discuta pelo menos três de suas principais consequências para os sistemas de previdência social, mercado de trabalho e dinâmica econômica dos países europeus.</p>
+            <div class="linhas-resposta">
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+            </div>
+        </div>
+
+        <!-- QUESTÃO 8 -->
+        <div class="questao">
+            <div class="questao-numero">8)</div>
+            <p class="enunciado no-indent">Complete o texto a seguir sobre os desafios contemporâneos da Europa, preenchendo as lacunas com informações coerentes com o conteúdo estudado.</p>
+
+            <p class="texto-lacunas">A Europa do século XXI enfrenta uma multiplicidade de desafios que testam a resiliência do projeto de <span class="lacuna">integração</span> europeia. No campo econômico, a crise financeira global de <span class="lacuna lacuna-curta">2008</span> atingiu severamente vários países europeus, especialmente aqueles com bolhas <span class="lacuna">imobiliárias</span> (casos da Irlanda e Espanha), sistemas bancários expostos ou finanças públicas comprometidas (como <span class="lacuna">Grécia</span>, Portugal e Itália). A subsequente crise do <span class="lacuna">euro</span> colocou em risco a própria sobrevivência da moeda única europeia, exigindo respostas coordenadas que incluíram mecanismos de <span class="lacuna">resgate</span>, criação de fundos de estabilidade como o MES e ações do Banco Central Europeu.</p>
+
+            <p class="texto-lacunas">No campo migratório, a partir de <span class="lacuna lacuna-curta">2015</span>, a Europa enfrentou o maior fluxo de refugiados e migrantes desde a Segunda Guerra Mundial, com centenas de milhares de pessoas provenientes principalmente da <span class="lacuna">Síria</span>, Afeganistão, Iraque e países subsaarianos atravessando o Mediterrâneo ou os <span class="lacuna">Bálcãs</span>. Esse fluxo gerou crises políticas em diversos países e expôs profundas <span class="lacuna">divergências</span> entre Estados-membros sobre responsabilidades solidárias e quotas de redistribuição de <span class="lacuna">refugiados</span>.</p>
+
+            <p class="texto-lacunas">No plano geopolítico, o ambiente de segurança europeia deteriorou-se significativamente com a <span class="lacuna">anexação</span> da Crimeia pela Rússia em 2014 e, de forma dramática, com a invasão em larga escala da <span class="lacuna">Ucrânia</span> em fevereiro de 2022. Esses eventos obrigaram a UE a repensar sua política de defesa e segurança, historicamente dependente da <span class="lacuna">OTAN</span>, e a discutir conceitos como "autonomia estratégica" europeia, aumento de gastos de <span class="lacuna">defesa</span> e redução de dependências energéticas, especialmente do gás natural <span class="lacuna">russo</span>.</p>
+
+            <p class="texto-lacunas">Adicionalmente, a transição energética ganhou urgência com o Pacto Verde Europeu (European Green Deal), que propõe neutralidade carbônica até <span class="lacuna">2050</span> e redução de pelo menos <span class="lacuna lacuna-curta">55</span>% das emissões de gases com efeito de estufa até 2030. Essa transição envolve transformações profundas nos sistemas energéticos, transportes, agricultura e indústria, gerando simultaneamente oportunidades de inovação e tensões relacionadas a custos energéticos, setores em reconversão e distribuição justa de <span class="lacuna">encargos</span> e benefícios.</p>
+        </div>
+
+        <!-- QUESTÃO 9 -->
+        <div class="questao">
+            <div class="questao-numero">9)</div>
+            <p class="enunciado no-indent">Sobre as características políticas dos sistemas de governo europeus contemporâneos, assinale a alternativa correta:</p>
+            <ol class="alternativas" type="a">
+                <li>Todas as monarquias europeias possuem reis ou rainhas com amplos poderes políticos executivos e legislativos, similares aos sistemas absolutistas do século XVIII.</li>
+                <li>As repúblicas parlamentares europeias caracterizam-se pela inexistência da figura do presidente da República, concentrando todo o poder executivo nas mãos do primeiro-ministro.</li>
+                <li>As repúblicas semipresidenciais, como a França e Portugal, combinam elementos do presidencialismo e do parlamentarismo, com presidentes detendo poderes significativos em áreas como política externa e defesa.</li>
+                <li>O sistema político britânico é uma república parlamentar desde a Revolução Gloriosa de 1688, tendo abolido formalmente a monarquia no século XIX.</li>
+                <li>Na Alemanha, o presidente federal detém o poder executivo efetivo, enquanto o chanceler possui funções meramente cerimoniais e representativas.</li>
+            </ol>
+        </div>
+
+        <!-- QUESTÃO 10 -->
+        <div class="questao">
+            <div class="questao-numero">10)</div>
+            <p class="enunciado">Considerando todo o conteúdo estudado nesta unidade sobre a hegemonia europeia – sua formação histórica, expansão colonial, características contemporâneas dos países europeus, a construção e funcionamento da União Europeia, o Brexit e os desafios atuais do continente – elabore um texto analítico que responda à seguinte questão: <strong>A Europa continua sendo uma potência hegemônica no século XXI? Justifique sua resposta apresentando argumentos sobre os fatores que ainda sustentam a influência europeia e aqueles que apontam para seu relativo declínio em face de outras potências mundiais.</strong></p>
+            <div class="linhas-resposta">
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+            </div>
+        </div>
+
+    </article>
+
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+        Geografia — 9º Ano | Unidade 1: A Hegemonia Europeia e a Configuração do Mundo Contemporâneo
+    </footer>
+
+</body>
+</html>

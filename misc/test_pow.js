@@ -17,13 +17,13 @@ let challengeData = {
 }
 
 
-let answer = solvePow(challenge, salt, difficulty, expireAt);
+let answer = solvePow(challengeData.challenge, challengeData.salt, challengeData.difficulty, challengeData.expireAt);
 let header = buildPowHeader(challengeData, answer);
 
 console.log(answer)
 console.log(header)
 
-axios.post('https://chat.deepseek.com/api/v0/chat/completion', {
+/*axios.post('https://chat.deepseek.com/api/v0/chat/completion', {
         chat_session_id: "423b8d44-6625-4f29-b584-348b04c11ec1",
         model_type: "default",
         parent_message_id: null,
@@ -45,4 +45,4 @@ YWQzNGJhMTFjZGUzZTQyZDk5YmE4ZmMxYjY4ZTZhMWJjN2Y3NzJhNSIsInRhcmdldF9wYXRoIjoiL2Fw
 axios.post('https://chat.deepseek.com/api/v0/chat/create_pow_challenge', {target_path: "/api/v0/chat/completion"},
     {headers: {'Authorization': 'Bearer ' + JSON.parse(localStorage.userToken).value,
     }
-    }).then(function(resp){console.log(resp)})
+    }).then(function(resp){console.log(resp)})*/
