@@ -36,17 +36,34 @@ function hmacSha256Pure(key, msg) {
     return sha256(oKey + sha256(iPad + msg));
 }
 changedAttrs
+
+
+
+
+var script = document.createElement('script');
+script.src = 'https://cdn.jsdelivr.net/npm/axios@1.15.2/dist/axios.min.js';
+document.head.appendChild(script);
 class ZAIChat{
-    constructor(model, bearer, user_id, globalEventEmitter){
+    constructor(model, bearer, user_id, globalEventEmitter, title){
         this.model = model;
         this.model_data = null;
         this.bearer = bearer;
         this.user_id = user_id;
         this.chat_id = null;
         this.current_user_message_parent_id = null;
-        this.globalEventEmitter = globalEventEmitter;
         this.msgId = null;
-        this.chat_data = null
+        this.chat_data = null;
+        this.chat_data_raw = null;
+        this.chat_esqueleto_data = null;
+        this.reseted_msgId = false;
+        this.firstReq = true;
+        this.history = null;
+        this.start_messages = null;
+        this.title = title
+    }
+    loadChat(chat_id){
+        this.firstReq = false;
+        this.chat_id = chat_id;
     }
     formatarData(data) {
         const ano = data.getFullYear();
@@ -62,34 +79,68 @@ class ZAIChat{
         // Retorna no formato desejado: YYYY-MM-DD HH:MM:SS
         return `${ano}-${mes}-${dia} ${hora}:${minuto}:${segundo}`;
     }
-    async init_GLM5V_Turbo(prompt, titulo_chat){
-        // TODO: Adicionar lógica de busca de features por nome de ia
-        const msgId = crypto.randomUUID();
+    createAssistantMessage(parent_id){
         const now = Date.now();
+        let assistantMessageId = crypto.randomUUID();
+        let timestamp = Math.floor(now/1000);
+        return {
+            [assistantMessageId]: {
+                "parentId": parent_id,
+                "parent_id": parent_id,
+                "id": assistantMessageId,
+                "childrenIds": [],
+                "role": "assistant",
+                "content": "",
+                "model": this.model,
+                "modelName": this.model,
+                "modelIdx": 0,
+                "userContext": null,
+                "timestamp": timestamp  
+            }
+        }
+    }
+    createUserPrompt(prompt){
+        const now = Date.now();
+        let userMessageId = crypto.randomUUID();
+        let timestamp = Math.floor(now/1000);
+        let userPrompt = {
+                [userMessageId]: {
+                    "id": userMessageId,
+                    "parentId": null,
+                    "childrenIds": [],
+                    "role": "user",
+                    "content": prompt,
+                    "timestamp": timestamp,
+                    "models": [
+                        this.model
+                    ]
+                }
+        }
+        return userPrompt
+    }
+    insertChindrenIDsInUserPrompt(userObjectPrompt, childrenId){
+        let new_userObjectPrompt = userObjectPrompt;
+        if (!new_userObjectPrompt[Object.keys(userObjectPrompt)[0]].childrenIds){
+            new_userObjectPrompt[Object.keys(userObjectPrompt)[0]].childrenIds = [];
+        }
+        new_userObjectPrompt[Object.keys(userObjectPrompt)[0]].childrenIds.push(childrenId);
+        return new_userObjectPrompt;
+    }
+    async init_GLM5V_Turbo(prompt, messages, currentId){
+        // TODO: Adicionar lógica de busca de features por nome de ia
+        let now = Date.now();;
             
         let newchat_req = await axios.post('https://chat.z.ai/api/v1/chats/new', {
             "chat": {
                 "id": "",
-                "title": titulo_chat,
+                "title": this.title,
                 "models": [
                     "GLM-5v-Turbo"
                 ],
                 "params": {},
                 "history": {
-                    "messages": {
-                        [msgId]: {
-                            "id": msgId,
-                            "parentId": null,
-                            "childrenIds": [],
-                            "role": "user",
-                            "content": prompt,
-                            "timestamp": Math.floor(now/1000),
-                            "models": [
-                                "GLM-5v-Turbo"
-                            ]
-                        }
-                    },
-                    "currentId": msgId
+                    "messages": messages,
+                    "currentId": currentId
                 },
                 "tags": [],
                 "flags": [],
@@ -122,7 +173,6 @@ class ZAIChat{
             'Content-Type': 'application/json',
             'x-region': 'overseas'
         }})
-        this.msgId = msgId
         this.chat_id = newchat_req.data.id
     }
     async getAvailableModels(){
@@ -145,21 +195,109 @@ class ZAIChat{
     }
 
     async queryChatData() {
-        let chat_data = await axios.get(`https://chat.z.ai/api/v1/chats/${this.chat_id}`, {headers:{
+        if (this.firstReq){
+            return this.start_messages;
+        }
+        let chat_esqueleto_data = await axios.get(`https://chat.z.ai/api/v1/chats/${this.chat_id}`, {headers:{
             'X-Region': 'overseas'
         }});
-        this.chat_data = chat_data.data;
-        return chat_data.data
+        this.chat_esqueleto_data = chat_esqueleto_data.data;
+
+        let ids = [];
+        for (let msg_key of Object.keys(this.chat_esqueleto_data.chat.history.messages)){
+            ids.push(msg_key);
+        }
+        let chat_data_raw = await axios.post(`https://chat.z.ai/api/v1/chats/${this.chat_id}/messages/batch`, {ids: ids});
+        this.chat_data_raw = chat_data_raw.data;
+
+        for (let msg_key of Object.keys(this.chat_esqueleto_data.data.chat.history)){
+            console.log(msg_key);
+            console.log(this.chat_data_raw.data[msg_key])
+        }
+
+        return chat_esqueleto_data.data
         
     }
     async completions(prompt){
         if (!this.model_data){
             let a = await this.setModelData();
         }
-        
-        await this.queryChatData();
-        // window.exposedFNs.ts(this.chat_data, this.model_data, crypto.randomUUID(), this.chat_id)
-        let finalData = {
+        window.globalEventEmitter.on('completions_data', async function(resp){
+            try{
+                window.globalEventEmitter.off('completions_data')
+                let stream = resp.body
+                let reader = stream.getReader()
+                let decoder = new TextDecoder()
+                let buffer = '';
+                let json_buffer = [];
+                while (true) {
+                    // read() retorna uma promessa que resolve quando o próximo "chunk" chega
+                    const { done, value } = await reader.read();
+
+                    // Se 'done' for true, a stream terminou
+                    if (done) {
+                        console.log("Stream finalizada!");
+                        break;
+                    }
+
+                    // 'value' é um Uint8Array. Decodificamos para string.
+                    let ct = decoder.decode(value, { stream: true });
+                    const chunkText = buffer.concat(ct);
+
+                    let data_arr = chunkText.split('\n');
+                    let catched = false;
+                    for (let arr of data_arr){
+                        let clean_data = arr.replace('data: ', '');
+                        try{
+                            let data_json = JSON.parse(clean_data);
+                            json_buffer.push(data_json)
+                            console.log(data_json);
+                        }
+                        catch{
+                            buffer = buffer.concat(arr);
+                            catched = true;
+                        }
+                    }
+                    if (!catched){
+                        buffer = '';
+                    }
+                }
+                let completion = '';
+                let think_start = false;
+                let think_end = false;
+                let tok_usage_info = null;
+                for (let data_arr of json_buffer){
+                    if (data_arr.type == 'chat:completion'){
+                        if (data_arr.data.phase == 'thinking'){
+                            if (!think_start){
+                                completion = completion.concat('<THINK START>');
+                                think_start = true;
+                            }
+                            completion = completion.concat(data_arr.data.delta_content);
+                        }
+                        else if (data_arr.data.phase == 'answer'){
+                            if (!think_end){
+                                completion = completion.concat('<THINK END>');
+                                think_end = true;
+                            }
+                            completion = completion.concat(data_arr.data.delta_content);
+                        }
+                        else if (data_arr.data.phase == 'other'){
+                            if (data_arr.data.usage){
+                                tok_usage_info = data_arr.data.usage;
+                            }
+                        }
+                    }
+                }
+                console.log(completion);
+                console.log(tok_usage_info);
+            }
+            catch (err){
+                console.log(err);
+            }
+
+        });
+        let config = {
             "mcpServers": [],
             "userPrompt": prompt,
             "autoWebSearch": false,
@@ -171,26 +309,67 @@ class ZAIChat{
                 vlm_website_mode: true
             }
         }
-        this.globalEventEmitter.on('completions_data', function(request){
-            console.log(request);
-        })
-        console.log(this.chat_data.chat.history.messages)
-        console.log(this.model_data)
-        console.log(this.chat_id)
-        let assistantMessage = structuredClone(this.chat_data.chat.history.messages[this.msgId])
-        let assistantMessageId = crypto.randomUUID();
-        this.chat_data.chat.history.messages[this.msgId].childrenIds = [assistantMessageId]
-        assistantMessage.parentId = this.msgId;
-        assistantMessage.id = assistantMessageId
-        assistantMessage.role = 'assistant'
-        console.log(assistantMessage, 'assist msg')
-        this.chat_data.chat.history.messages[assistantMessageId] = assistantMessage
-        await window.exposedFNs.ts(this.chat_data.chat.history, this.model_data, assistantMessageId,  this.chat_id, finalData)
+
+        if (this.firstReq){
+            console.log('em firstReq');
+            this.firstReq = false
+            let userPrompt = this.createUserPrompt(prompt);
+            await this.init_GLM5V_Turbo(prompt, userPrompt, Object.keys(userPrompt)[0])
+            let assistantMessage = this.createAssistantMessage(Object.keys(userPrompt)[0])
+            console.log(userPrompt)
+            userPrompt = this.insertChindrenIDsInUserPrompt(userPrompt, Object.keys(assistantMessage)[0])
+            let history = {messages: {...userPrompt, ...assistantMessage}, currentId: Object.keys(assistantMessage)[0]};
+            console.log(history);
+
+            if (!window.changedAttrs){
+                window.changedAttrs = {};
+            }
+            window.changedAttrs.id = Object.keys(assistantMessage)[0]
+            window.changedAttrs.current_user_message_id = Object.keys(userPrompt)[0]
+            window.changedAttrs.current_user_message_parent_id = userPrompt[Object.keys(userPrompt)[0]].parentId
+            window.changedAttrs.chatId = this.chat_id
+
+            await window.exposedFNs.ts(history, this.model_data, Object.keys(assistantMessage)[0],  this.chat_id, config)
+        }
+        else {
+            console.log('fora de firstReq')
+            let chat_esqueleto_data = await axios.get(`https://chat.z.ai/api/v1/chats/${this.chat_id}`);
+            let currentId = chat_esqueleto_data.data.chat.history.currentId;
+            let ids = [];
+            for (let msg_key of Object.keys(chat_esqueleto_data.data.chat.history.messages)){
+                ids.push(msg_key);
+            };
+            let chat_data = await axios.post(`https://chat.z.ai/api/v1/chats/${this.chat_id}/messages/batch`, {ids: ids});
+            let messages = chat_data.data.data;
+            
+            let userPrompt = this.createUserPrompt(prompt);
+            let assistantMessage = this.createAssistantMessage(Object.keys(userPrompt)[0]);
+            userPrompt = this.insertChindrenIDsInUserPrompt(userPrompt, Object.keys(assistantMessage)[0]);
+            userPrompt[Object.keys(userPrompt)[0]].parentId = currentId;
+            userPrompt[Object.keys(userPrompt)[0]].parent_id = currentId;
+
+            messages[Object.keys(assistantMessage)[0]] = assistantMessage[Object.keys(assistantMessage)[0]];
+            messages[Object.keys(userPrompt)[0]] = userPrompt[Object.keys(userPrompt)[0]];
+
+            window.changedAttrs.id = Object.keys(assistantMessage)[0]
+            window.changedAttrs.current_user_message_id = Object.keys(userPrompt)[0]
+            window.changedAttrs.current_user_message_parent_id = userPrompt[Object.keys(userPrompt)[0]].parentId
+            window.changedAttrs.chatId = this.chat_id;
+            messages[currentId].childrenIds.push(Object.keys(userPrompt)[0]);
+            currentId = assistantMessage[Object.keys(assistantMessage)[0]].id;
+
+            // 
+            console.log(messages, 'messages')
+
+            let history = {messages: {...messages}, currentId: currentId};
+            console.log(history, 'history')
+            await window.exposedFNs.ts(history, this.model_data, Object.keys(assistantMessage)[0],  this.chat_id, config)
+        }
+
     }
 }
-let zaic = new ZAIChat('GLM-5.1', localStorage.getItem('token'), '9d622803-4050-41e8-ad2c-aa957456cae8', window.globalEventEmitter)
-await zaic.init_GLM5V_Turbo('Olá! Você conhece o sublime text?', 'Chat agentico 033: sublime text');
-await zaic.completions('Olá! Você conhece o sublime text?')
+let zaic = new ZAIChat('GLM-5v-Turbo', localStorage.getItem('token'), '7e9613e2-bc8d-458a-9e5a-c697d8d1d0f4', window.globalEventEmitter, 'Vulcôes')
+await zaic.completions('Olá! O que é a água? Em 20 palavras.')
 async function zaichatinit() {
     
 };
